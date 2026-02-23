@@ -111,33 +111,33 @@ After completing each parent task:
 
 ## Tasks
 
-- [ ] 0.0 Initialise repository and create feature branch
-  - [ ] 0.1 Run `git init` to initialise the repository
-  - [ ] 0.2 Create `.gitignore` with entries for: `node_modules/`, `dist/`, `.env`, `.env.local`, `cdk.out/`, `.DS_Store`, `*.js.map`, `coverage/`
-  - [ ] 0.3 Create and checkout a new branch: `git checkout -b feature/saltus-atr-questionnaire`
+- [x] 0.0 Initialise repository and create feature branch
+  - [x] 0.1 Run `git init` to initialise the repository
+  - [x] 0.2 Create `.gitignore` with entries for: `node_modules/`, `dist/`, `.env`, `.env.local`, `cdk.out/`, `.DS_Store`, `*.js.map`, `coverage/`
+  - [x] 0.3 Create and checkout a new branch: `git checkout -b feature/saltus-atr-questionnaire`
 
 > **CHECKPOINT: Stop here.** Verify (build/lint/test), summarise what was implemented, list assumptions + failure modes + production risks, and **wait for explicit user approval** before continuing.
 
 ---
 
-- [ ] 1.0 Project scaffolding — Vite + React + TypeScript + Tailwind CSS v4 + Saltus theme
-  - [ ] 1.1 Initialise Yarn 4 (Berry): run `corepack enable && yarn init -2` in the project root. Set `nodeLinker: node-modules` in `.yarnrc.yml`
-  - [ ] 1.2 Scaffold a Vite + React + TypeScript project: create `package.json` with dependencies — `react`, `react-dom`, `typescript`, `@types/react`, `@types/react-dom`, `vite`, `@vitejs/plugin-react`. Create `vite.config.ts` and `tsconfig.json`
-  - [ ] 1.3 Install frontend dependencies: `react-router-dom`, `@apollo/client`, `graphql`, `aws-appsync-auth-link`, `@aws-amplify/core`, `amazon-cognito-identity-js`, `react-hook-form`, `@headlessui/react`, `file-saver`, `@types/file-saver`, `axios`
-  - [ ] 1.4 Install dev dependencies: `tailwindcss@4`, `@tailwindcss/vite`, `vitest`, `@testing-library/react`, `@testing-library/jest-dom`, `@testing-library/user-event`, `jsdom`, `eslint`, `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`, `eslint-plugin-react-hooks`
-  - [ ] 1.5 Create `vite.config.ts` with React plugin and Tailwind CSS v4 plugin. Add `test` config block for Vitest (environment: jsdom, globals: true, setupFiles)
-  - [ ] 1.6 Create `src/index.css` with Tailwind CSS v4 `@import "tailwindcss"` directive. Define Saltus theme tokens using `@theme`: colours (navy `#18263a`, dark-navy `#22384f`, blue `#325a7d`, cream `#fff5e6`, coral `#f0645a`, gold `#ec9f22`, teal `#9de6e4`, green `#49796b`, grey `#8c9097`, light-grey `#eeeeee`, divider `#dddddd`), font families (Georgia for headings, Roboto for body), border radii (card: 12px, input: 8px, pill: 9999px), box shadow (card: `0 1px 2.625px #00000014`)
-  - [ ] 1.7 Create `index.html` with Vite entry point (`<div id="root">`, `<script type="module" src="/src/main.tsx">`). Add Google Fonts `<link>` for Roboto (weights 300, 400, 500, 600, 700)
-  - [ ] 1.8 Create `src/main.tsx` — renders `<App />` into `#root` with `React.StrictMode`
-  - [ ] 1.9 Create `src/App.tsx` — placeholder that renders "Saltus ATR" text (routing added in task 2)
-  - [ ] 1.10 Create `src/vite-env.d.ts` with Vite client types reference
-  - [ ] 1.11 Create `.env.example` with placeholder values for `VITE_APPSYNC_ENDPOINT`, `VITE_APPSYNC_REGION`, `VITE_COGNITO_IDENTITY_POOL_ID`
-  - [ ] 1.12 Add scripts to `package.json`: `dev` (vite), `build` (tsc && vite build), `preview` (vite preview), `test` (vitest run), `test:watch` (vitest), `lint` (eslint src/)
-  - [ ] 1.13 Create a Vitest setup file (`src/test/setup.ts`) that imports `@testing-library/jest-dom`
-  - [ ] 1.14 Create ESLint config (`.eslintrc.cjs` or `eslint.config.js`) with TypeScript and React Hooks plugins
-  - [ ] 1.15 Run `yarn install`, then `yarn dev` — verify the app starts and shows the placeholder text in the browser
-  - [ ] 1.16 Run `yarn build` — verify it compiles without errors
-  - [ ] 1.17 Run `yarn lint` — verify no lint errors
+- [x] 1.0 Project scaffolding — Vite + React + TypeScript + Tailwind CSS v4 + Saltus theme
+  - [x] 1.1 Initialise Yarn 4 (Berry): run `corepack enable && yarn init -2` in the project root. Set `nodeLinker: node-modules` in `.yarnrc.yml`
+  - [x] 1.2 Scaffold a Vite + React + TypeScript project: create `package.json` with dependencies — `react`, `react-dom`, `typescript`, `@types/react`, `@types/react-dom`, `vite`, `@vitejs/plugin-react`. Create `vite.config.ts` and `tsconfig.json`
+  - [x] 1.3 Install frontend dependencies: `react-router-dom`, `@apollo/client`, `graphql`, `aws-appsync-auth-link`, `@aws-amplify/core`, `amazon-cognito-identity-js`, `react-hook-form`, `@headlessui/react`, `file-saver`, `@types/file-saver`, `axios`
+  - [x] 1.4 Install dev dependencies: `tailwindcss@4`, `@tailwindcss/vite`, `vitest`, `@testing-library/react`, `@testing-library/jest-dom`, `@testing-library/user-event`, `jsdom`, `eslint`, `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`, `eslint-plugin-react-hooks`
+  - [x] 1.5 Create `vite.config.ts` with React plugin and Tailwind CSS v4 plugin. Add `test` config block for Vitest (environment: jsdom, globals: true, setupFiles)
+  - [x] 1.6 Create `src/index.css` with Tailwind CSS v4 `@import "tailwindcss"` directive. Define Saltus theme tokens using `@theme`: colours (navy `#18263a`, dark-navy `#22384f`, blue `#325a7d`, cream `#fff5e6`, coral `#f0645a`, gold `#ec9f22`, teal `#9de6e4`, green `#49796b`, grey `#8c9097`, light-grey `#eeeeee`, divider `#dddddd`), font families (Georgia for headings, Roboto for body), border radii (card: 12px, input: 8px, pill: 9999px), box shadow (card: `0 1px 2.625px #00000014`)
+  - [x] 1.7 Create `index.html` with Vite entry point (`<div id="root">`, `<script type="module" src="/src/main.tsx">`). Add Google Fonts `<link>` for Roboto (weights 300, 400, 500, 600, 700)
+  - [x] 1.8 Create `src/main.tsx` — renders `<App />` into `#root` with `React.StrictMode`
+  - [x] 1.9 Create `src/App.tsx` — placeholder that renders "Saltus ATR" text (routing added in task 2)
+  - [x] 1.10 Create `src/vite-env.d.ts` with Vite client types reference
+  - [x] 1.11 Create `.env.example` with placeholder values for `VITE_APPSYNC_ENDPOINT`, `VITE_APPSYNC_REGION`, `VITE_COGNITO_IDENTITY_POOL_ID`
+  - [x] 1.12 Add scripts to `package.json`: `dev` (vite), `build` (tsc && vite build), `preview` (vite preview), `test` (vitest run), `test:watch` (vitest), `lint` (eslint src/)
+  - [x] 1.13 Create a Vitest setup file (`src/test/setup.ts`) that imports `@testing-library/jest-dom`
+  - [x] 1.14 Create ESLint config (`.eslintrc.cjs` or `eslint.config.js`) with TypeScript and React Hooks plugins
+  - [x] 1.15 Run `yarn install`, then `yarn dev` — verify the app starts and shows the placeholder text in the browser
+  - [x] 1.16 Run `yarn build` — verify it compiles without errors
+  - [x] 1.17 Run `yarn lint` — verify no lint errors
 
 > **CHECKPOINT: Stop here.** Verify (build/lint/test), summarise what was implemented, list assumptions + failure modes + production risks, and **wait for explicit user approval** before continuing.
 
