@@ -4,9 +4,9 @@ import * as cognito from 'aws-cdk-lib/aws-cognito'
 import * as iam from 'aws-cdk-lib/aws-iam'
 import * as appsync from 'aws-cdk-lib/aws-appsync'
 import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs'
+import * as lambdaBase from 'aws-cdk-lib/aws-lambda'
 import * as path from 'path'
 import { Construct } from 'constructs'
-import { Runtime } from 'aws-cdk-lib/aws-lambda'
 
 export class SaltusAtrStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -72,7 +72,7 @@ export class SaltusAtrStack extends cdk.Stack {
       functionName: 'getQuestionsSaltusATR',
       entry: path.join(__dirname, '..', 'lambda', 'getQuestions', 'index.ts'),
       handler: 'handler',
-      runtime: Runtime.NODEJS_22_X,
+      runtime: lambdaBase.Runtime.NODEJS_22_X,
       memorySize: 256,
       timeout: cdk.Duration.seconds(30),
       bundling: { minify: true, sourceMap: true },
@@ -83,7 +83,7 @@ export class SaltusAtrStack extends cdk.Stack {
       functionName: 'calculateRiskSaltusATR',
       entry: path.join(__dirname, '..', 'lambda', 'calculateRisk', 'index.ts'),
       handler: 'handler',
-      runtime: Runtime.NODEJS_22_X,
+      runtime: lambdaBase.Runtime.NODEJS_22_X,
       memorySize: 256,
       timeout: cdk.Duration.seconds(30),
       bundling: { minify: true, sourceMap: true },
@@ -100,6 +100,33 @@ export class SaltusAtrStack extends cdk.Stack {
     calculateRiskDs.createResolver('CalculateRiskResolver', {
       typeName: 'Mutation',
       fieldName: 'calculateRisk',
+    })
+
+    // Lambda: generatePDF
+    // Chromium is bundled via @sparticuz/chromium (included in esbuild bundle)
+    const generatePdfLambda = new lambda.NodejsFunction(this, 'GeneratePdfFunction', {
+      functionName: 'generateRiskResultPDFSaltusATR',
+      entry: path.join(__dirname, '..', 'lambda', 'generatePDF', 'index.ts'),
+      handler: 'handler',
+      runtime: lambdaBase.Runtime.NODEJS_22_X,
+      memorySize: 2048,
+      timeout: cdk.Duration.seconds(300),
+      environment: {
+        PDF_BUCKET_NAME: pdfBucket.bucketName,
+      },
+      bundling: {
+        minify: true,
+        sourceMap: true,
+        // Exclude chromium binary from esbuild — it's loaded at runtime from the npm package
+        nodeModules: ['@sparticuz/chromium'],
+      },
+    })
+    pdfBucket.grantReadWrite(generatePdfLambda)
+
+    const generatePdfDs = api.addLambdaDataSource('GeneratePdfDs', generatePdfLambda)
+    generatePdfDs.createResolver('GeneratePdfResolver', {
+      typeName: 'Mutation',
+      fieldName: 'generateRiskResultPDF',
     })
 
     // Outputs for frontend .env

@@ -210,16 +210,16 @@ After completing each parent task:
 
 ---
 
-- [ ] 5.0 PDF generation Lambda & Saltus-branded HTML template
-  - [ ] 5.1 Create `infrastructure/lambda/generatePDF/data.ts` — copy the same 13 questions from `getQuestions/data.ts` (the PDF needs all answer options to render radio-button-style lists). Add a comment noting this must stay in sync with `getQuestions/data.ts`
-  - [ ] 5.2 Create `infrastructure/lambda/generatePDF/s3Service.ts` — S3 client with 3-second connection timeout. Export three functions: `storeTemplate(bucket, filename, body)` (PutObject, ContentDisposition: 'inline'), `storeDocument(bucket, filename, body)` (PutObject, ContentType: 'application/pdf', ContentDisposition: 'inline'), `getDocumentUrl(bucket, filename)` (presigned GET URL, 120s expiry). Use `@aws-sdk/client-s3` and `@aws-sdk/s3-request-presigner`
-  - [ ] 5.3 Create `infrastructure/lambda/generatePDF/template.ts` — export a function `compileTemplate(params: { RiskRating: string, RiskQuestionsString: string, RiskAnswersString: string, date: string }): string` that returns a complete HTML document string. Use lodash.template. The HTML structure:
+- [x] 5.0 PDF generation Lambda & Saltus-branded HTML template
+  - [x] 5.1 Create `infrastructure/lambda/generatePDF/data.ts` — copy the same 13 questions from `getQuestions/data.ts` (the PDF needs all answer options to render radio-button-style lists). Add a comment noting this must stay in sync with `getQuestions/data.ts`
+  - [x] 5.2 Create `infrastructure/lambda/generatePDF/s3Service.ts` — S3 client with 3-second connection timeout. Export three functions: `storeTemplate(bucket, filename, body)` (PutObject, ContentDisposition: 'inline'), `storeDocument(bucket, filename, body)` (PutObject, ContentType: 'application/pdf', ContentDisposition: 'inline'), `getDocumentUrl(bucket, filename)` (presigned GET URL, 120s expiry). Use `@aws-sdk/client-s3` and `@aws-sdk/s3-request-presigner`
+  - [x] 5.3 Create `infrastructure/lambda/generatePDF/template.ts` — export a function `compileTemplate(params: { RiskRating: string, RiskQuestionsString: string, RiskAnswersString: string, date: string }): string` that returns a complete HTML document string. Use lodash.template. The HTML structure:
     - `<head>`: charset UTF-8, Google Fonts link (Georgia not needed as system font, Roboto weights 300/400/700), CSS variables for Saltus colours (navy, teal, cream, coral, grey, etc.), print-optimised styles
     - **Page 1**: Teal top border (4px), H1 "Risk Profile Results" (#18263a), grey box (#eeeeee background) with left-side risk rating display and right-side "Your attitude to risk is {label}" + description text, info box "Please email this document to your Financial Adviser" (teal left border, light teal background), teal bottom border
     - **Page 2**: Header "Risk Profiler Report" (navy), H3 "Your questions and answers:", H5 "Risk Questionnaire:", ordered list (start=1) of questions 1-7, each with all answer options as styled radio circles, user's selected answer shown as filled teal circle
     - **Page 3**: Same header, H3 "Your questions and answers (continued)", ordered list (start=8) of questions 8-13, same radio-button format
     - JavaScript block at the bottom that parses the injected JSON strings, iterates questions, builds the radio-button HTML, and injects into `.first-section` and `.second-section` containers
-  - [ ] 5.4 Create `infrastructure/lambda/generatePDF/index.ts` — Lambda handler:
+  - [x] 5.4 Create `infrastructure/lambda/generatePDF/index.ts` — Lambda handler:
     1. Generate UUID via `crypto.randomUUID()`
     2. Extract `RiskRating` and `RiskAnswers` from `event.arguments.input`
     3. Import hardcoded questions from `data.ts`, serialise to JSON string
@@ -235,12 +235,12 @@ After completing each parent task:
     13. Generate presigned URL via `getDocumentUrl()`
     14. Return `{ url }`
     15. Wrap entire handler in try/catch — log errors, throw user-friendly message
-  - [ ] 5.5 Add PDF Lambda to CDK stack in `saltus-atr-stack.ts`:
+  - [x] 5.5 Add PDF Lambda to CDK stack in `saltus-atr-stack.ts`:
     - Create a Lambda Layer for `@sparticuz/chromium` (download the prebuilt layer zip from the chromium package, or use a bundled approach)
     - Create `generateRiskResultPDFSaltusATR` Lambda: Node.js 22.x, 2048MB memory, 300s timeout, bundled with esbuild via `NodejsFunction`, attach the Chromium layer, grant S3 read/write permissions to the PDF bucket, set `PDF_BUCKET_NAME` environment variable
     - Add AppSync resolver for `generateRiskResultPDF` mutation wired to this Lambda
-  - [ ] 5.6 Run `cd infrastructure && npx cdk synth` — verify the updated stack synthesises without errors
-  - [ ] 5.7 Review the HTML template for correctness: verify all 3 pages would render, colours match Saltus palette, fonts are correct, JavaScript logic correctly maps answers to questions
+  - [x] 5.6 Run `cd infrastructure && npx cdk synth` — verify the updated stack synthesises without errors
+  - [x] 5.7 Review the HTML template for correctness: verify all 3 pages would render, colours match Saltus palette, fonts are correct, JavaScript logic correctly maps answers to questions
 
 > **CHECKPOINT: Stop here.** Verify (build/lint/test), summarise what was implemented, list assumptions + failure modes + production risks, and **wait for explicit user approval** before continuing.
 
