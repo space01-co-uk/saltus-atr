@@ -19,7 +19,7 @@ const url = import.meta.env.VITE_APPSYNC_ENDPOINT ?? ''
 const region = import.meta.env.VITE_APPSYNC_REGION ?? 'eu-west-2'
 const identityPoolId = import.meta.env.VITE_COGNITO_IDENTITY_POOL_ID ?? ''
 
-const useMock = !url
+const useMock = import.meta.env.VITE_USE_MOCK_DATA === 'true'
 
 function createMockLink(): ApolloLink {
   return new ApolloLink((operation) => {
@@ -93,5 +93,5 @@ export const client = new ApolloClient({
 })
 
 if (useMock) {
-  console.log('[GraphQL] Using mock data — set VITE_APPSYNC_ENDPOINT to use real backend')
+  console.log('[GraphQL] Mock mode enabled via VITE_USE_MOCK_DATA')
 }

@@ -4,21 +4,24 @@ A 13-question attitude-to-risk questionnaire (EValue "5risk" system) built as a 
 
 ## Tech Stack
 
-- **Frontend:** React 18, TypeScript, Create React App
+- **Frontend:** React 18, TypeScript, Vite
 - **Package Manager:** Yarn 4.x (Berry)
 - **Backend:** AWS AppSync (GraphQL, IAM auth), Lambda (Node.js 22.x)
-- **Infrastructure:** AWS CDK + Amplify CLI
-- **Hosting:** S3 + CloudFront via Amplify
-- **CI/CD:** Bitbucket Pipelines
+- **External API:** EValue (OAuth2, questions + risk scoring)
+- **Infrastructure:** AWS CDK
+- **Hosting:** S3 + CloudFront (CDK-managed)
+- **CI/CD:** Manual deploy via CLI
 
 ## How It Works
 
-1. **Questions** are served from a hardcoded dataset in the `getQuestions` Lambda — no external API call. The frontend fetches them via a GraphQL query through AppSync.
+1. **Questions** are fetched at runtime from the **EValue API** via a pipeline resolver: AppSync → `getEvalueToken` Lambda (OAuth2) → `getQuestions` Lambda → EValue API. The frontend receives them via a GraphQL query.
 2. **User answers** all 13 questions in a forward-only flow (no back button). State is held in-memory with React Context + `useReducer` — nothing is persisted.
-3. **Risk score** (1–5) is calculated server-side by the `calculateRisk` Lambda using a local scoring algorithm (weighted average with forward/reverse scoring per question). No external API involved.
-4. **PDF report** is generated on-demand by a Lambda running headless Chromium (Puppeteer), uploaded to S3, and returned as a pre-signed URL (120s expiry).
+3. **Risk score** (1–5) is calculated by the **EValue API** via a second pipeline resolver: AppSync → `getEvalueToken` Lambda → `calculateRisk` Lambda → EValue API. The returned decimal is clamped to [1, 5] and truncated.
+4. **PDF report** is generated on-demand by a Lambda running headless Chromium (Puppeteer), uploaded to S3, and returned as a pre-signed URL (120s expiry). This is a direct resolver (no pipeline, no EValue call) — the frontend passes all the data it needs.
 
-There is no database and no external API dependency at runtime. Questions and scoring logic are self-contained in the Lambdas. The only stored artifact is the temporary PDF in S3.
+There is no database. The only stored artifact is the temporary PDF in S3. The EValue API is the source of truth for questions and risk scoring.
+
+For a detailed backend walkthrough, see [docs/BACKEND_ARCHITECTURE.md](docs/BACKEND_ARCHITECTURE.md).
 
 ## Getting Started
 
@@ -28,6 +31,8 @@ yarn start          # Dev server
 yarn build          # Production build
 yarn test           # Run tests (Jest, watch mode)
 ```
+
+Set `VITE_USE_MOCK_DATA=true` in a `.env.local` file to use mock data without a backend. Without this flag, the app expects a real AppSync endpoint and will show errors if the API is unreachable.
 
 ## Routes
 
@@ -42,4 +47,18 @@ yarn test           # Run tests (Jest, watch mode)
 
 | Variable | Description |
 |---|---|
-| `REACT_APP_GTM_API_KEY` | Google Tag Manager API key |
+| `VITE_APPSYNC_ENDPOINT` | AppSync GraphQL endpoint URL |
+| `VITE_APPSYNC_REGION` | AWS region (defaults to `eu-west-2`) |
+| `VITE_COGNITO_IDENTITY_POOL_ID` | Cognito Identity Pool ID for anonymous auth |
+| `VITE_PARENT_ORIGIN` | Allowed parent origin for iframe `postMessage` |
+| `VITE_USE_MOCK_DATA` | Set to `true` to use mock data instead of the real API |
+
+## Deployment
+
+```bash
+# Deploy infrastructure (from infrastructure/ directory)
+AWS_PROFILE=jr-dev npx cdk deploy SaltusAtrQuestionnaireStack
+
+# Deploy frontend only (builds + syncs to S3 + invalidates CloudFront)
+AWS_PROFILE=jr-dev bash scripts/deploy-frontend.sh
+```
