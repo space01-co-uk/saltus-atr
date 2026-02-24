@@ -253,38 +253,6 @@ function handler(event) {
       fieldName: "generateRiskResultPDF",
     });
 
-    // --- GitHub Actions OIDC Deploy Role ---
-
-    const githubProvider = new iam.OpenIdConnectProvider(this, "GitHubOIDC", {
-      url: "https://token.actions.githubusercontent.com",
-      clientIds: ["sts.amazonaws.com"],
-    });
-
-    const deployRole = new iam.Role(this, "GitHubDeployRole", {
-      assumedBy: new iam.WebIdentityPrincipal(
-        githubProvider.openIdConnectProviderArn,
-        {
-          StringEquals: {
-            "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-          },
-          StringLike: {
-            "token.actions.githubusercontent.com:sub":
-              "repo:space01-vinnymann/saltus-atr:ref:refs/heads/main",
-          },
-        },
-      ),
-    });
-
-    hostingBucket.grantReadWrite(deployRole);
-    deployRole.addToPolicy(
-      new iam.PolicyStatement({
-        actions: ["cloudfront:CreateInvalidation"],
-        resources: [
-          `arn:aws:cloudfront::${this.account}:distribution/${distribution.distributionId}`,
-        ],
-      }),
-    );
-
     // Outputs
     new cdk.CfnOutput(this, "CloudFrontUrl", {
       value: cloudfrontUrl,
@@ -299,11 +267,6 @@ function handler(event) {
     new cdk.CfnOutput(this, "HostingBucketName", {
       value: hostingBucket.bucketName,
       description: "S3 bucket for frontend hosting",
-    });
-
-    new cdk.CfnOutput(this, "DeployRoleArn", {
-      value: deployRole.roleArn,
-      description: "IAM role for GitHub Actions deploy",
     });
 
     new cdk.CfnOutput(this, "AppSyncEndpoint", {
