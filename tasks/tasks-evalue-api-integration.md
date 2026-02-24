@@ -103,17 +103,17 @@ After completing each parent task:
 
 ---
 
-- [ ] 5.0 Update CDK stack with pipeline resolvers and new Lambda
-  - [ ] 5.1 Read current CDK AppSync pipeline resolver documentation using Context7 MCP to understand the correct CDK API for creating pipeline resolvers with JS resolver functions
-  - [ ] 5.2 Add the `getEvalueToken` Lambda to `infrastructure/lib/saltus-atr-stack.ts`: create a `NodejsFunction` with entry `lambda/getEvalueToken/index.ts`, env vars `SECRET_NAME` (`SALTUS-ATR-EVALUE-dev`) and `EVALUE_API_BASE_URL` (`https://api.evalueproduction.com`), runtime Node.js 22.x, 256MB, 30s timeout
-  - [ ] 5.3 Add IAM policy to the token Lambda granting `secretsmanager:GetSecretValue` scoped to `arn:aws:secretsmanager:eu-west-2:*:secret:SALTUS-ATR-EVALUE-*`
-  - [ ] 5.4 Add `EVALUE_API_BASE_URL` environment variable to the existing `getQuestions` and `calculateRisk` Lambdas
-  - [ ] 5.5 Create an AppSync data source for the `getEvalueToken` Lambda
-  - [ ] 5.6 Create `AppsyncFunction` objects for each Lambda data source (getEvalueToken, getQuestions, calculateRisk) with JS resolver request/response handlers that forward `ctx.prev.result` and `ctx.arguments`
-  - [ ] 5.7 Replace the existing `getQuestions` single Lambda resolver with a pipeline resolver chaining: getEvalueToken function -> getQuestions function
-  - [ ] 5.8 Replace the existing `calculateRisk` single Lambda resolver with a pipeline resolver chaining: getEvalueToken function -> calculateRisk function
-  - [ ] 5.9 Verify `generateRiskResultPDF` resolver is unchanged (remains a single Lambda resolver)
-  - [ ] 5.10 Run `cd infrastructure && npx tsc --noEmit` to confirm no TypeScript errors in the CDK stack
+- [x] 5.0 Update CDK stack with pipeline resolvers and new Lambda
+  - [x] 5.1 Read current CDK AppSync pipeline resolver documentation using Context7 MCP to understand the correct CDK API for creating pipeline resolvers with JS resolver functions
+  - [x] 5.2 Add the `getEvalueToken` Lambda to `infrastructure/lib/saltus-atr-stack.ts`: create a `NodejsFunction` with entry `lambda/getEvalueToken/index.ts`, env vars `SECRET_NAME` (`SALTUS-ATR-EVALUE-dev`) and `EVALUE_API_BASE_URL` (`https://api.evalueproduction.com`), runtime Node.js 22.x, 256MB, 30s timeout
+  - [x] 5.3 Add IAM policy to the token Lambda granting `secretsmanager:GetSecretValue` scoped to `arn:aws:secretsmanager:eu-west-2:*:secret:SALTUS-ATR-EVALUE-*`
+  - [x] 5.4 Add `EVALUE_API_BASE_URL` environment variable to the existing `getQuestions` and `calculateRisk` Lambdas
+  - [x] 5.5 Create an AppSync data source for the `getEvalueToken` Lambda
+  - [x] 5.6 Create `AppsyncFunction` objects for each Lambda data source (getEvalueToken, getQuestions, calculateRisk) with JS resolver request/response handlers that forward `ctx.prev.result` and `ctx.arguments`
+  - [x] 5.7 Replace the existing `getQuestions` single Lambda resolver with a pipeline resolver chaining: getEvalueToken function -> getQuestions function
+  - [x] 5.8 Replace the existing `calculateRisk` single Lambda resolver with a pipeline resolver chaining: getEvalueToken function -> calculateRisk function
+  - [x] 5.9 Verify `generateRiskResultPDF` resolver is unchanged (remains a single Lambda resolver)
+  - [x] 5.10 Run `cd infrastructure && npx tsc --noEmit` to confirm no TypeScript errors in the CDK stack
 
 > **CHECKPOINT: Stop here.** Verify (build/lint/test), summarise what was implemented, list assumptions + failure modes + production risks, and **wait for explicit user approval** before continuing.
 
