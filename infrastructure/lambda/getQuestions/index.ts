@@ -46,9 +46,15 @@ export const handler = async (event: AppSyncPipelineEvent) => {
     throw new Error('Failed to fetch questions from EValue')
   }
 
-  const data = (await response.json()) as EValueQuestion[]
+  const data: any = await response.json()
+  const questions = data?.questions
 
-  return data.map((q) => ({
+  if (!Array.isArray(questions)) {
+    console.error('EValue returned unexpected response shape:', JSON.stringify(data))
+    throw new Error('EValue returned an unexpected response — service may be unavailable')
+  }
+
+  return (questions as EValueQuestion[]).map((q) => ({
     id: String(q.questionId),
     text: q.questionText,
     answers: q.responses.map((r) => ({

@@ -49,7 +49,13 @@ export const handler = async (event: AppSyncPipelineEvent) => {
     throw new Error('Failed to calculate risk rating')
   }
 
-  const data = (await response.json()) as { riskProfile: number }
+  const data: any = await response.json()
+
+  if (typeof data?.riskProfile !== 'number') {
+    console.error('EValue returned unexpected response shape:', JSON.stringify(data))
+    throw new Error('EValue returned an unexpected response — service may be unavailable')
+  }
+
   const clamped = Math.max(1, Math.min(5, parseInt(String(data.riskProfile))))
 
   return { rating: clamped }
