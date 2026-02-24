@@ -1,18 +1,18 @@
-import { useNavigate } from 'react-router-dom'
-import { useQuestionnaire } from '../context/QuestionnaireContext'
-import { RiskLevelSelector } from '../components/RiskLevelSelector'
+import { useNavigate } from "react-router-dom";
+import { useQuestionnaire } from "../context/QuestionnaireContext";
+import { RiskLevelSelector } from "../components/RiskLevelSelector";
 
 export default function QuestionnaireStart() {
-  const navigate = useNavigate()
-  const { dispatch } = useQuestionnaire()
+  const navigate = useNavigate();
+  const { dispatch } = useQuestionnaire();
 
   const handleStart = () => {
-    dispatch({ type: 'RESET_FORM' })
-    navigate('/questionnaire')
-  }
+    dispatch({ type: "RESET_FORM" });
+    navigate("/questionnaire");
+  };
 
   return (
-    <div className="w-full max-w-xl rounded-card bg-panel p-8 shadow-card sm:p-10">
+    <div className="w-full max-w-3xl rounded-card bg-panel p-8 shadow-card sm:p-10">
       {/* Title */}
       <div className="mb-7 text-center">
         <h1 className="font-heading text-3xl font-bold text-foreground">
@@ -31,15 +31,40 @@ export default function QuestionnaireStart() {
       {/* Info badges */}
       <div className="mb-7 flex flex-wrap justify-center gap-3">
         <span className="flex items-center gap-1.5 rounded-pill bg-muted px-3 py-1.5 font-body text-xs font-medium text-foreground">
-          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 5h6m-3 7 2 2 4-4" /></svg>
+          <svg
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 5h6m-3 7 2 2 4-4" />
+          </svg>
           13 questions
         </span>
         <span className="flex items-center gap-1.5 rounded-pill bg-muted px-3 py-1.5 font-body text-xs font-medium text-foreground">
-          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
+          <svg
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 6v6l4 2" />
+          </svg>
           &lt; 5 minutes
         </span>
         <span className="flex items-center gap-1.5 rounded-pill bg-muted px-3 py-1.5 font-body text-xs font-medium text-foreground">
-          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+          <svg
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
           Private
         </span>
       </div>
@@ -135,9 +160,17 @@ export default function QuestionnaireStart() {
           className="flex w-full items-center justify-center gap-2 rounded-pill bg-coral px-8 py-3 font-body text-base font-medium text-white transition-colors hover:bg-coral/90"
         >
           I&apos;m ready to start
-          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M5 12h14m-7-7 7 7-7 7" /></svg>
+          <svg
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path d="M5 12h14m-7-7 7 7-7 7" />
+          </svg>
         </button>
       </div>
     </div>
-  )
+  );
 }
