@@ -40,7 +40,7 @@ export default function Questionnaire() {
   if (loading || state.questions.length === 0) {
     return (
       <div className="flex items-center justify-center py-16">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-light-grey border-t-teal" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-muted border-t-coral" />
       </div>
     )
   }
@@ -60,11 +60,7 @@ export default function Questionnaire() {
   }
 
   return (
-    <div>
-      <h2 className="mb-6 font-heading text-2xl text-navy">
-        Your attitude to risk
-      </h2>
-
+    <div className="w-full max-w-xl rounded-card bg-panel p-8 shadow-card sm:p-10">
       <ProgressBar
         currentStep={state.currentQuestion}
         totalSteps={state.questions.length}

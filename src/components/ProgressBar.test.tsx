@@ -17,17 +17,17 @@ describe('ProgressBar', () => {
     }
   })
 
-  it('shows current segment with teal styling', () => {
+  it('shows current segment with coral styling', () => {
     const { container } = render(<ProgressBar currentStep={5} totalSteps={13} />)
     const segments = container.querySelectorAll('[role="progressbar"] > div')
-    expect(segments[4]).toHaveClass('bg-teal')
+    expect(segments[4]).toHaveClass('bg-coral')
   })
 
-  it('shows future segments with grey styling', () => {
+  it('shows future segments with muted styling', () => {
     const { container } = render(<ProgressBar currentStep={5} totalSteps={13} />)
     const segments = container.querySelectorAll('[role="progressbar"] > div')
     for (let i = 5; i < 13; i++) {
-      expect(segments[i]).toHaveClass('bg-light-grey')
+      expect(segments[i]).toHaveClass('bg-muted')
     }
   })
 

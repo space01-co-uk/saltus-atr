@@ -27,7 +27,7 @@ export function QuestionForm({ question, onSubmit, isLastQuestion }: QuestionFor
   return (
     <form onSubmit={handleSubmit(onFormSubmit)}>
       <fieldset>
-        <legend className="mb-4 font-heading text-xl font-normal text-navy">
+        <legend className="mb-4 font-heading text-xl font-normal text-foreground">
           {question.text}
         </legend>
 
@@ -35,7 +35,7 @@ export function QuestionForm({ question, onSubmit, isLastQuestion }: QuestionFor
           {question.answers.map((answer) => (
             <label
               key={answer.id}
-              className="flex min-h-[44px] cursor-pointer items-center gap-3 rounded-input border border-divider bg-white p-3 transition-colors has-[:checked]:border-teal has-[:checked]:bg-teal/20 hover:border-grey"
+              className="flex min-h-11 cursor-pointer items-center gap-3 rounded-input border border-border-clr bg-panel p-3 transition-colors has-checked:border-coral has-checked:bg-coral/10 hover:border-muted-fg"
             >
               <input
                 type="radio"
@@ -43,9 +43,9 @@ export function QuestionForm({ question, onSubmit, isLastQuestion }: QuestionFor
                 {...register('selectedAnswer', {
                   required: 'Please select an answer',
                 })}
-                className="h-4 w-4 accent-teal"
+                className="h-4 w-4 accent-coral"
               />
-              <span className="font-body text-base text-navy">{answer.text}</span>
+              <span className="font-body text-base text-foreground">{answer.text}</span>
             </label>
           ))}
         </div>
@@ -58,7 +58,7 @@ export function QuestionForm({ question, onSubmit, isLastQuestion }: QuestionFor
 
         <button
           type="submit"
-          className="mt-6 rounded-pill bg-navy px-8 py-3 font-body text-base font-medium text-white transition-colors hover:bg-dark-navy"
+          className="mt-6 rounded-pill bg-coral px-8 py-3 font-body text-base font-medium text-white transition-colors hover:bg-coral/90"
         >
           {isLastQuestion ? 'Submit' : 'Next'}
         </button>

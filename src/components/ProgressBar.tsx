@@ -16,9 +16,9 @@ export function ProgressBar({ currentStep, totalSteps }: ProgressBarProps) {
       >
         {Array.from({ length: totalSteps }, (_, i) => {
           const step = i + 1
-          let bgClass = 'bg-light-grey'
+          let bgClass = 'bg-muted'
           if (step < currentStep) bgClass = 'bg-green'
-          else if (step === currentStep) bgClass = 'bg-teal'
+          else if (step === currentStep) bgClass = 'bg-coral'
 
           return (
             <div
@@ -28,7 +28,7 @@ export function ProgressBar({ currentStep, totalSteps }: ProgressBarProps) {
           )
         })}
       </div>
-      <p className="mt-2 font-body text-sm text-grey">
+      <p className="mt-2 font-body text-sm text-muted-fg">
         Question {currentStep} of {totalSteps}
       </p>
     </div>

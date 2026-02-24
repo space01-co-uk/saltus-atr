@@ -37,7 +37,19 @@
       "Bash(kill:*)",
       "Bash(xargs kill:*)",
       "Bash(ps:*)",
-      "Bash(head:*)"
+      "Bash(head:*)",
+      "Bash(aws amplify get-job:*)",
+      "WebFetch(domain:aws-amplify-prod-eu-west-2-artifacts.s3.eu-west-2.amazonaws.com)",
+      "Bash(aws amplify get-app:*)",
+      "Bash(aws iam get-role:*)",
+      "Bash(aws iam list-attached-role-policies:*)",
+      "Bash(chmod:*)",
+      "Bash(npx tsc:*)",
+      "mcp__playwright__browser_take_screenshot",
+      "WebFetch(domain:www.saltus.co.uk)",
+      "Bash(yarn test -- --watchAll=false)",
+      "WebFetch(domain:customer-handover.risk.standardlife.co.uk)",
+      "mcp__playwright__browser_close"
     ]
   }
 }

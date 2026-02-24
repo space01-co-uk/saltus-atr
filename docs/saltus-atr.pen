@@ -1,0 +1,4372 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "KUBpS",
+      "x": 0,
+      "y": 0,
+      "name": "Start - Light",
+      "clip": true,
+      "width": 1440,
+      "height": 1800,
+      "fill": "#FDFAF5",
+      "layout": "vertical",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "7dbU9",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 64,
+          "stroke": {
+            "align": "inside",
+            "thickness": 0
+          },
+          "padding": [
+            0,
+            40
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "x2HdY",
+              "name": "Logo",
+              "fill": "#f0645a",
+              "content": "saltus",
+              "fontFamily": "Georgia",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "OC6Mv",
+              "name": "Header Right",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "GJotS",
+                  "name": "Theme Toggle",
+                  "fill": "$--muted",
+                  "cornerRadius": 9999,
+                  "gap": 2,
+                  "padding": 3,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "MWs8i",
+                      "name": "Sun Btn",
+                      "width": 26,
+                      "height": 26,
+                      "fill": "$--card",
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "zUx0e",
+                          "name": "sunIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "sun",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--foreground"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xi4b6",
+                      "name": "Moon Btn",
+                      "width": 26,
+                      "height": 26,
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "V8iCM",
+                          "name": "moonIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "moon",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--muted-foreground"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "9Xv4T",
+          "name": "Content Area",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            40,
+            20
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "31Cjs",
+              "name": "Start Card",
+              "width": 600,
+              "fill": "#FFFFFF",
+              "cornerRadius": 12,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000014",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              },
+              "layout": "vertical",
+              "gap": 28,
+              "padding": [
+                40,
+                36
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NZYJI",
+                  "name": "Title Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bunJ1",
+                      "name": "Title",
+                      "fill": "#18263a",
+                      "content": "Attitude to Risk",
+                      "textAlign": "center",
+                      "fontFamily": "Georgia",
+                      "fontSize": 28,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Ze6UQ",
+                      "name": "Subtitle",
+                      "fill": "#f0645a",
+                      "content": "Questionnaire",
+                      "textAlign": "center",
+                      "fontFamily": "Georgia",
+                      "fontSize": 28,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "7EJtJ",
+                      "name": "Description",
+                      "fill": "#8c9097",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Check how much risk you might be comfortable taking with your investments with our risk profiler designed by EV, leading experts in the field of risk analysis.",
+                      "lineHeight": 1.6,
+                      "textAlign": "center",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "okqk0",
+                  "name": "Info Badges",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QdRkI",
+                      "name": "Badge",
+                      "fill": "#f0ece5",
+                      "cornerRadius": 9999,
+                      "gap": 6,
+                      "padding": [
+                        6,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "Zw7eL",
+                          "name": "b1Icon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "list-checks",
+                          "iconFontFamily": "lucide",
+                          "fill": "#18263a"
+                        },
+                        {
+                          "type": "text",
+                          "id": "VZS7j",
+                          "name": "b1Text",
+                          "fill": "#18263a",
+                          "content": "13 questions",
+                          "fontFamily": "Roboto",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dvLXb",
+                      "name": "Badge",
+                      "fill": "#f0ece5",
+                      "cornerRadius": 9999,
+                      "gap": 6,
+                      "padding": [
+                        6,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "ORjAL",
+                          "name": "b2Icon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "clock",
+                          "iconFontFamily": "lucide",
+                          "fill": "#18263a"
+                        },
+                        {
+                          "type": "text",
+                          "id": "TAsX6",
+                          "name": "b2Text",
+                          "fill": "#18263a",
+                          "content": "< 5 minutes",
+                          "fontFamily": "Roboto",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "8hy6Y",
+                      "name": "Badge",
+                      "fill": "#f0ece5",
+                      "cornerRadius": 9999,
+                      "gap": 6,
+                      "padding": [
+                        6,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "YpkIo",
+                          "name": "b3Icon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "shield",
+                          "iconFontFamily": "lucide",
+                          "fill": "#18263a"
+                        },
+                        {
+                          "type": "text",
+                          "id": "9jaAS",
+                          "name": "b3Text",
+                          "fill": "#18263a",
+                          "content": "Private",
+                          "fontFamily": "Roboto",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BcN5C",
+                  "name": "Divider1",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#dddddd"
+                },
+                {
+                  "type": "frame",
+                  "id": "hx2ND",
+                  "name": "Intro Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "begSZ",
+                      "name": "introPara1",
+                      "fill": "#18263a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Choosing to invest, rather than saving alone, gives your money more chance to potentially grow. How much risk you take can affect your potential growth so it's important to understand how much you're willing and able to take.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "nsMFP",
+                      "name": "introPara2",
+                      "fill": "#18263a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Our profiler helps you understand your attitude towards risk. It asks several key investment-related questions designed to assess your experience with different types of investments and your comfort level with taking risks.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "E4R3n",
+                      "name": "introPara3",
+                      "fill": "#18263a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Each response is assigned a score, which is then combined to provide you with an overall risk rating — there are five levels of risk ratings.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rxJ03",
+                  "name": "Divider2",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#dddddd"
+                },
+                {
+                  "type": "frame",
+                  "id": "rUDkk",
+                  "name": "Risk Ratings Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "4ZCoP",
+                      "name": "riskHeading",
+                      "fill": "#18263a",
+                      "content": "What are the risk ratings?",
+                      "fontFamily": "Georgia",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gv4ZM",
+                      "name": "Risk Box",
+                      "width": "fill_container",
+                      "fill": "#f9f7f2",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 20,
+                      "padding": [
+                        24,
+                        20
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Dga8z",
+                          "name": "riskInstruction",
+                          "fill": "#8c9097",
+                          "content": "Click each level to learn more",
+                          "fontFamily": "Roboto",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "BkeIJ",
+                          "name": "Risk Options",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "LQ0Fp",
+                              "name": "Risk 1 Selected",
+                              "width": "fill_container",
+                              "fill": "#e8edf3",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 2,
+                                "fill": "#18263a"
+                              },
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                12,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "B935T",
+                                  "name": "r1Num",
+                                  "fill": "#18263a",
+                                  "content": "1",
+                                  "fontFamily": "Georgia",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "ZOBXY",
+                                  "name": "r1Label",
+                                  "fill": "#18263a",
+                                  "content": "Lower",
+                                  "textAlign": "center",
+                                  "fontFamily": "Roboto",
+                                  "fontSize": 11,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "bmcyW",
+                              "name": "Risk 2",
+                              "width": "fill_container",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1,
+                                "fill": "#dddddd"
+                              },
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                12,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ztKbC",
+                                  "name": "r2Num",
+                                  "fill": "#18263a",
+                                  "content": "2",
+                                  "fontFamily": "Georgia",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "cFEHs",
+                                  "name": "r2Label",
+                                  "fill": "#8c9097",
+                                  "content": "Lower-Med",
+                                  "textAlign": "center",
+                                  "fontFamily": "Roboto",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "IaQ8u",
+                              "name": "Risk 3",
+                              "width": "fill_container",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1,
+                                "fill": "#dddddd"
+                              },
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                12,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "5wPT2",
+                                  "name": "r3Num",
+                                  "fill": "#18263a",
+                                  "content": "3",
+                                  "fontFamily": "Georgia",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "xYJd8",
+                                  "name": "r3Label",
+                                  "fill": "#8c9097",
+                                  "content": "Medium",
+                                  "textAlign": "center",
+                                  "fontFamily": "Roboto",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "4nzhS",
+                              "name": "Risk 4",
+                              "width": "fill_container",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1,
+                                "fill": "#dddddd"
+                              },
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                12,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "jg5RI",
+                                  "name": "r4Num",
+                                  "fill": "#18263a",
+                                  "content": "4",
+                                  "fontFamily": "Georgia",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "SsrEd",
+                                  "name": "r4Label",
+                                  "fill": "#8c9097",
+                                  "content": "Med-Higher",
+                                  "textAlign": "center",
+                                  "fontFamily": "Roboto",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Z8y6E",
+                              "name": "Risk 5",
+                              "width": "fill_container",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1,
+                                "fill": "#dddddd"
+                              },
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                12,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "uAoO5",
+                                  "name": "r5Num",
+                                  "fill": "#18263a",
+                                  "content": "5",
+                                  "fontFamily": "Georgia",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "oVHac",
+                                  "name": "r5Label",
+                                  "fill": "#8c9097",
+                                  "content": "Higher",
+                                  "textAlign": "center",
+                                  "fontFamily": "Roboto",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "wxULZ",
+                          "name": "Selected Description",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "A2Idm",
+                              "name": "selectedLabel",
+                              "fill": "#18263a",
+                              "content": "Lower",
+                              "fontFamily": "Georgia",
+                              "fontSize": 16,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "wvjgJ",
+                              "name": "selectedDesc",
+                              "fill": "#18263a",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "You're likely to be more conservative with your investments and understand that there may be some short-term changes in value to get potentially modest or relatively stable returns.",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aVKS4",
+                  "name": "Divider3",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#dddddd"
+                },
+                {
+                  "type": "frame",
+                  "id": "0rfOW",
+                  "name": "Assess Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "AX6G0",
+                      "name": "assessHeading",
+                      "fill": "#18263a",
+                      "content": "How to assess your attitude to risk",
+                      "fontFamily": "Georgia",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5Ryt0",
+                      "name": "assessIntro",
+                      "fill": "#18263a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "This EV questionnaire can help you understand your attitude to risk but there are some limitations:",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jsQvl",
+                      "name": "Bullet Points",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "BhTYE",
+                          "name": "Bullet 1",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "2TTDo",
+                              "name": "dot1",
+                              "fill": "#f0645a",
+                              "content": "•",
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "h4TGg",
+                              "name": "bp1Text",
+                              "fill": "#18263a",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "The questionnaire is designed to help you decide for yourself and shouldn't be taken as advice",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hbrK2",
+                          "name": "Bullet 2",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ewotG",
+                              "name": "dot2",
+                              "fill": "#f0645a",
+                              "content": "•",
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "5p1XG",
+                              "name": "bp2Text",
+                              "fill": "#18263a",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "The questionnaire doesn't consider your age, your financial goals or how much money you'd be comfortable losing i.e. your capacity for loss",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VRJ2h",
+                          "name": "Bullet 3",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "uYsSv",
+                              "name": "dot3",
+                              "fill": "#f0645a",
+                              "content": "•",
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "flIHT",
+                              "name": "bp3Text",
+                              "fill": "#18263a",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "You should also consider how long you plan to invest for and when you think you might need access to your money",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6uAvP",
+                  "name": "Divider4",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#dddddd"
+                },
+                {
+                  "type": "frame",
+                  "id": "jiD6R",
+                  "name": "CTA Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "FciNu",
+                      "name": "ctaHeading",
+                      "fill": "#18263a",
+                      "content": "Take the questionnaire",
+                      "textAlign": "center",
+                      "fontFamily": "Georgia",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "lUW47",
+                      "name": "ctaDesc",
+                      "fill": "#18263a",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "The EV attitude to risk questionnaire contains 13 multiple choice questions which you need to answer to discover your risk rating. It should take less than 5 minutes.",
+                      "lineHeight": 1.6,
+                      "textAlign": "center",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "rp7TM",
+                      "name": "CTA Button",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "#f0645a",
+                      "cornerRadius": 9999,
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "4woBd",
+                          "name": "ctaText",
+                          "fill": "#FFFFFF",
+                          "content": "I'm ready to start",
+                          "fontFamily": "Roboto",
+                          "fontSize": 16,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "ElzfX",
+                          "name": "ctaIcon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FFFFFF"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "NRfSD",
+          "name": "Footer",
+          "width": "fill_container",
+          "layout": "vertical",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "BPm34",
+              "name": "Footer Content",
+              "width": "fill_container",
+              "height": 56,
+              "fill": "#FDFAF5",
+              "padding": [
+                0,
+                40
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "2Phxd",
+                  "name": "footerLogo",
+                  "fill": "#8c9097",
+                  "content": "saltus",
+                  "fontFamily": "Georgia",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "NzgAh",
+                  "name": "footerLinks",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RSWYe",
+                      "name": "footerLink1",
+                      "fill": "#8c9097",
+                      "content": "Privacy Policy",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZPRKo",
+                      "name": "footerLink2",
+                      "fill": "#8c9097",
+                      "content": "Terms of Service",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "LpClC",
+      "x": 1540,
+      "y": 0,
+      "name": "Question - Light",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "#FDFAF5",
+      "layout": "vertical",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "2K6nD",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 64,
+          "stroke": {
+            "align": "inside",
+            "thickness": 0
+          },
+          "padding": [
+            0,
+            40
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "0pHkh",
+              "name": "Logo",
+              "fill": "#f0645a",
+              "content": "saltus",
+              "fontFamily": "Georgia",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "Td6wg",
+              "name": "Header Right",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mszYr",
+                  "name": "qHeaderRight",
+                  "fill": "$--muted-foreground",
+                  "content": "Question 5 of 13",
+                  "fontFamily": "Roboto",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "3CuCG",
+                  "name": "Theme Toggle",
+                  "fill": "$--muted",
+                  "cornerRadius": 9999,
+                  "gap": 2,
+                  "padding": 3,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rLGE6",
+                      "name": "Sun Btn",
+                      "width": 26,
+                      "height": 26,
+                      "fill": "$--card",
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "ti8Bm",
+                          "name": "sunIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "sun",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--foreground"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1stPJ",
+                      "name": "Moon Btn",
+                      "width": 26,
+                      "height": 26,
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "WvHwb",
+                          "name": "moonIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "moon",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--muted-foreground"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "WHwLV",
+          "name": "Content Area",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            32,
+            20
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "YLm0G",
+              "name": "Question Card",
+              "width": 580,
+              "fill": "#FFFFFF",
+              "cornerRadius": 12,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000014",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              },
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 36,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "vJ4UZ",
+                  "name": "Progress Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "59oea",
+                      "name": "progressLabel",
+                      "fill": "#8c9097",
+                      "content": "Question 5 of 13",
+                      "fontFamily": "Roboto",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zWJyy",
+                      "name": "Progress Bar",
+                      "width": "fill_container",
+                      "height": 6,
+                      "cornerRadius": 3,
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "NVy5b",
+                          "name": "seg1",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#49796b",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "k9m0B",
+                          "name": "seg2",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#49796b",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "FR0PJ",
+                          "name": "seg3",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#49796b",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xJNqA",
+                          "name": "seg4",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#49796b",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "67BbV",
+                          "name": "seg5",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#f0645a",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "YUQtR",
+                          "name": "seg6",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#eeeeee",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "7G18C",
+                          "name": "seg7",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#eeeeee",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "tZGpP",
+                          "name": "seg8",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#eeeeee",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Qdhlz",
+                          "name": "seg9",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#eeeeee",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "jlsbW",
+                          "name": "seg10",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#eeeeee",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "4AIP0",
+                          "name": "seg11",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#eeeeee",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "TgsJN",
+                          "name": "seg12",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#eeeeee",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Crzuw",
+                          "name": "seg13",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#eeeeee",
+                          "cornerRadius": 3
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "2YtKX",
+                  "name": "Question",
+                  "fill": "#18263a",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "If the value of your investments fell by 20%, what would you do?",
+                  "lineHeight": 1.4,
+                  "fontFamily": "Georgia",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "FnZXt",
+                  "name": "Answer Options",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "3vVNU",
+                      "name": "Answer 1",
+                      "width": "fill_container",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#dddddd"
+                      },
+                      "gap": 12,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "DyR7a",
+                          "name": "radio1",
+                          "fill": "#FDFAF5",
+                          "width": 20,
+                          "height": 20,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2,
+                            "fill": "#dddddd"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "4lSM0",
+                          "name": "ansText1",
+                          "fill": "#18263a",
+                          "content": "Sell all my investments immediately",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "CbQs9",
+                      "name": "Answer 2 Selected",
+                      "width": "fill_container",
+                      "fill": "#fef2f1",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#f0645a"
+                      },
+                      "gap": 12,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "IM4Pc",
+                          "name": "Radio Selected",
+                          "width": 20,
+                          "height": 20,
+                          "fill": "#FDFAF5",
+                          "cornerRadius": 10,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2,
+                            "fill": "#f0645a"
+                          },
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "oVTlR",
+                              "x": 5,
+                              "y": 5,
+                              "name": "radio2Dot",
+                              "fill": "#f0645a",
+                              "width": 10,
+                              "height": 10
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "LHFhI",
+                          "name": "ansText2",
+                          "fill": "#18263a",
+                          "content": "Be concerned, but wait to see if they recover",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "441S3",
+                      "name": "Answer 3",
+                      "width": "fill_container",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#dddddd"
+                      },
+                      "gap": 12,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "FjK9z",
+                          "name": "radio3",
+                          "fill": "#FDFAF5",
+                          "width": 20,
+                          "height": 20,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2,
+                            "fill": "#dddddd"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "xjj20",
+                          "name": "ansText3",
+                          "fill": "#18263a",
+                          "content": "Do nothing, this is normal market behaviour",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vS8nv",
+                      "name": "Answer 4",
+                      "width": "fill_container",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#dddddd"
+                      },
+                      "gap": 12,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "TblOs",
+                          "name": "radio4",
+                          "fill": "#FDFAF5",
+                          "width": 20,
+                          "height": 20,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2,
+                            "fill": "#dddddd"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "mAVjZ",
+                          "name": "ansText4",
+                          "fill": "#18263a",
+                          "content": "Invest more to take advantage of lower prices",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "sacZk",
+                  "name": "Next Button",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#f0645a",
+                  "cornerRadius": 9999,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "kafZv",
+                      "name": "nextText",
+                      "fill": "#FFFFFF",
+                      "content": "Next",
+                      "fontFamily": "Roboto",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "oiORg",
+                      "name": "nextIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "arrow-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "nUGl0",
+          "name": "Footer",
+          "width": "fill_container",
+          "layout": "vertical",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "vuSpW",
+              "name": "Footer Content",
+              "width": "fill_container",
+              "height": 56,
+              "fill": "#FDFAF5",
+              "padding": [
+                0,
+                40
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "BiMoZ",
+                  "name": "qFooterLogo",
+                  "fill": "#8c9097",
+                  "content": "saltus",
+                  "fontFamily": "Georgia",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "4WzdO",
+                  "name": "qFooterLinks",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pwLra",
+                      "name": "qFLink1",
+                      "fill": "#8c9097",
+                      "content": "Privacy Policy",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "or9Ve",
+                      "name": "qFLink2",
+                      "fill": "#8c9097",
+                      "content": "Terms of Service",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "y6ceD",
+      "x": 3080,
+      "y": 0,
+      "name": "Results - Light",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "#FDFAF5",
+      "layout": "vertical",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "lHJ7X",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 64,
+          "stroke": {
+            "align": "inside",
+            "thickness": 0
+          },
+          "padding": [
+            0,
+            40
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "oVHKW",
+              "name": "Logo",
+              "fill": "#f0645a",
+              "content": "saltus",
+              "fontFamily": "Georgia",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "TJtMe",
+              "name": "Header Right",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "B0e35",
+                  "name": "rHeaderRight",
+                  "fill": "$--muted-foreground",
+                  "content": "Your Results",
+                  "fontFamily": "Roboto",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "ouTVu",
+                  "name": "Theme Toggle",
+                  "fill": "$--muted",
+                  "cornerRadius": 9999,
+                  "gap": 2,
+                  "padding": 3,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lxbWj",
+                      "name": "Sun Btn",
+                      "width": 26,
+                      "height": 26,
+                      "fill": "$--card",
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "neAWQ",
+                          "name": "sunIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "sun",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--foreground"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "GMihQ",
+                      "name": "Moon Btn",
+                      "width": 26,
+                      "height": 26,
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "Q5FPI",
+                          "name": "moonIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "moon",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--muted-foreground"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ucD3B",
+          "name": "Content Area",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            32,
+            20
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "GPgz9",
+              "name": "Results Card",
+              "width": 520,
+              "fill": "#FFFFFF",
+              "cornerRadius": 12,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000014",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              },
+              "layout": "vertical",
+              "gap": 28,
+              "padding": [
+                40,
+                36
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "sJr4w",
+                  "name": "Rating Circle",
+                  "width": 120,
+                  "height": 120,
+                  "fill": "#f0ece5",
+                  "cornerRadius": 60,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 3,
+                    "fill": "#f0645a"
+                  },
+                  "layout": "vertical",
+                  "gap": 2,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dqJy1",
+                      "name": "ratingNum",
+                      "fill": "#18263a",
+                      "content": "3",
+                      "textAlign": "center",
+                      "fontFamily": "Georgia",
+                      "fontSize": 40,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "awBXL",
+                      "name": "ratingOf",
+                      "fill": "#8c9097",
+                      "content": "of 5",
+                      "textAlign": "center",
+                      "fontFamily": "Roboto",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "lpBVZ",
+                  "name": "resultTitle",
+                  "fill": "#18263a",
+                  "content": "Medium Risk",
+                  "textAlign": "center",
+                  "fontFamily": "Georgia",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "TicAG",
+                  "name": "resultDesc",
+                  "fill": "#8c9097",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "You have a balanced approach to risk. You understand that some level of risk is necessary for growth but prefer not to take extreme positions. A diversified portfolio with a mix of growth and defensive assets would suit your profile.",
+                  "lineHeight": 1.6,
+                  "textAlign": "center",
+                  "fontFamily": "Roboto",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "TiDVt",
+                  "name": "Risk Scale",
+                  "width": "fill_container",
+                  "height": 8,
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "x0noV",
+                      "name": "scaleBar1",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#49796b",
+                      "cornerRadius": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "3w5s3",
+                      "name": "scaleBar2",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#49796b",
+                      "cornerRadius": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "o0GLJ",
+                      "name": "scaleBar3",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#f0645a",
+                      "cornerRadius": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "M9Lwp",
+                      "name": "scaleBar4",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#eeeeee",
+                      "cornerRadius": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "87gDV",
+                      "name": "scaleBar5",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#eeeeee",
+                      "cornerRadius": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "T1fjQ",
+                  "name": "Scale Labels",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Sf5o3",
+                      "name": "scaleLabelLow",
+                      "fill": "#8c9097",
+                      "content": "Lower Risk",
+                      "fontFamily": "Roboto",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "toMGg",
+                      "name": "scaleLabelHigh",
+                      "fill": "#8c9097",
+                      "content": "Higher Risk",
+                      "fontFamily": "Roboto",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aDeT1",
+                  "name": "Action Buttons",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rVmYh",
+                      "name": "Retake Button",
+                      "width": "fill_container",
+                      "height": 48,
+                      "cornerRadius": 9999,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#dddddd"
+                      },
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "O3SoL",
+                          "name": "retakeIcon",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "rotate-ccw",
+                          "iconFontFamily": "lucide",
+                          "fill": "#18263a"
+                        },
+                        {
+                          "type": "text",
+                          "id": "GvnPL",
+                          "name": "retakeText",
+                          "fill": "#18263a",
+                          "content": "Retake",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Lfidl",
+                      "name": "Download Button",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "#f0645a",
+                      "cornerRadius": 9999,
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "CoRA5",
+                          "name": "dlIcon",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "download",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FFFFFF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "VtBjU",
+                          "name": "dlText",
+                          "fill": "#FFFFFF",
+                          "content": "Download PDF",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "3kqIX",
+          "name": "Footer",
+          "width": "fill_container",
+          "layout": "vertical",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "mvn29",
+              "name": "Footer Content",
+              "width": "fill_container",
+              "height": 56,
+              "fill": "#FDFAF5",
+              "padding": [
+                0,
+                40
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ovTuZ",
+                  "name": "rFooterLogo",
+                  "fill": "#8c9097",
+                  "content": "saltus",
+                  "fontFamily": "Georgia",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "RwwQp",
+                  "name": "rFooterLinks",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Dqv0X",
+                      "name": "rFLink1",
+                      "fill": "#8c9097",
+                      "content": "Privacy Policy",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "D4dPz",
+                      "name": "rFLink2",
+                      "fill": "#8c9097",
+                      "content": "Terms of Service",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ZVC3W",
+      "x": 0,
+      "y": 1000,
+      "name": "Start - Dark",
+      "clip": true,
+      "width": 1440,
+      "height": 1800,
+      "fill": "#0f1a28",
+      "layout": "vertical",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ZXXld",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 64,
+          "stroke": {
+            "align": "inside",
+            "thickness": 0
+          },
+          "padding": [
+            0,
+            40
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "o2pIy",
+              "name": "Logo",
+              "fill": "#f0645a",
+              "content": "saltus",
+              "fontFamily": "Georgia",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "JZiPB",
+              "name": "Header Right",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CHuUR",
+                  "name": "Theme Toggle",
+                  "fill": "$--muted",
+                  "cornerRadius": 9999,
+                  "gap": 2,
+                  "padding": 3,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "p5J1O",
+                      "name": "Sun Btn",
+                      "width": 26,
+                      "height": 26,
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "QhtMS",
+                          "name": "sunIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "sun",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--muted-foreground"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sRI5f",
+                      "name": "Moon Btn",
+                      "width": 26,
+                      "height": 26,
+                      "fill": "$--card",
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "8yIFR",
+                          "name": "moonIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "moon",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--foreground"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "67TXt",
+          "name": "Content Area",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            40,
+            20
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "wbQSp",
+              "name": "Start Card",
+              "width": 600,
+              "fill": "#18263a",
+              "cornerRadius": 12,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000014",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              },
+              "layout": "vertical",
+              "gap": 28,
+              "padding": [
+                40,
+                36
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "8ULaS",
+                  "name": "Title Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "5rNqo",
+                      "name": "Title",
+                      "fill": "#FDFAF5",
+                      "content": "Attitude to Risk",
+                      "textAlign": "center",
+                      "fontFamily": "Georgia",
+                      "fontSize": 28,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "eFeNq",
+                      "name": "Subtitle",
+                      "fill": "#f0645a",
+                      "content": "Questionnaire",
+                      "textAlign": "center",
+                      "fontFamily": "Georgia",
+                      "fontSize": 28,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "kSECL",
+                      "name": "Description",
+                      "fill": "#8c9097",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Check how much risk you might be comfortable taking with your investments with our risk profiler designed by EV, leading experts in the field of risk analysis.",
+                      "lineHeight": 1.6,
+                      "textAlign": "center",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YQ5ut",
+                  "name": "Info Badges",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "7KGui",
+                      "name": "Badge",
+                      "fill": "#22384f",
+                      "cornerRadius": 9999,
+                      "gap": 6,
+                      "padding": [
+                        6,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "PU4Ew",
+                          "name": "b1Icon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "list-checks",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FDFAF5"
+                        },
+                        {
+                          "type": "text",
+                          "id": "9XyKe",
+                          "name": "b1Text",
+                          "fill": "#FDFAF5",
+                          "content": "13 questions",
+                          "fontFamily": "Roboto",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HOZ0Y",
+                      "name": "Badge",
+                      "fill": "#22384f",
+                      "cornerRadius": 9999,
+                      "gap": 6,
+                      "padding": [
+                        6,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "gHzGm",
+                          "name": "b2Icon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "clock",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FDFAF5"
+                        },
+                        {
+                          "type": "text",
+                          "id": "7SyGj",
+                          "name": "b2Text",
+                          "fill": "#FDFAF5",
+                          "content": "< 5 minutes",
+                          "fontFamily": "Roboto",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sP3Qs",
+                      "name": "Badge",
+                      "fill": "#22384f",
+                      "cornerRadius": 9999,
+                      "gap": 6,
+                      "padding": [
+                        6,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "8z4bp",
+                          "name": "b3Icon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "shield",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FDFAF5"
+                        },
+                        {
+                          "type": "text",
+                          "id": "U2nh6",
+                          "name": "b3Text",
+                          "fill": "#FDFAF5",
+                          "content": "Private",
+                          "fontFamily": "Roboto",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "leLD5",
+                  "name": "Divider1",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#325a7d"
+                },
+                {
+                  "type": "frame",
+                  "id": "N1X8K",
+                  "name": "Intro Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "mtezj",
+                      "name": "introPara1",
+                      "fill": "#FDFAF5",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Choosing to invest, rather than saving alone, gives your money more chance to potentially grow. How much risk you take can affect your potential growth so it's important to understand how much you're willing and able to take.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "2mDUI",
+                      "name": "introPara2",
+                      "fill": "#FDFAF5",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Our profiler helps you understand your attitude towards risk. It asks several key investment-related questions designed to assess your experience with different types of investments and your comfort level with taking risks.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "n7LN0",
+                      "name": "introPara3",
+                      "fill": "#FDFAF5",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Each response is assigned a score, which is then combined to provide you with an overall risk rating — there are five levels of risk ratings.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "w6iBO",
+                  "name": "Divider2",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#325a7d"
+                },
+                {
+                  "type": "frame",
+                  "id": "Bawlz",
+                  "name": "Risk Ratings Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "nmutN",
+                      "name": "riskHeading",
+                      "fill": "#FDFAF5",
+                      "content": "What are the risk ratings?",
+                      "fontFamily": "Georgia",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "XQ70p",
+                      "name": "Risk Box",
+                      "width": "fill_container",
+                      "fill": "#22384f",
+                      "cornerRadius": 12,
+                      "layout": "vertical",
+                      "gap": 20,
+                      "padding": [
+                        24,
+                        20
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "NPa4R",
+                          "name": "riskInstruction",
+                          "fill": "#8c9097",
+                          "content": "Click each level to learn more",
+                          "fontFamily": "Roboto",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "raZrr",
+                          "name": "Risk Options",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "pDeiU",
+                              "name": "Risk 1 Selected",
+                              "width": "fill_container",
+                              "fill": "#325a7d",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 2,
+                                "fill": "#FDFAF5"
+                              },
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                12,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "pgNTt",
+                                  "name": "r1Num",
+                                  "fill": "#FDFAF5",
+                                  "content": "1",
+                                  "fontFamily": "Georgia",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "2hfcU",
+                                  "name": "r1Label",
+                                  "fill": "#FDFAF5",
+                                  "content": "Lower",
+                                  "textAlign": "center",
+                                  "fontFamily": "Roboto",
+                                  "fontSize": 11,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "p9Wqj",
+                              "name": "Risk 2",
+                              "width": "fill_container",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1,
+                                "fill": "#325a7d"
+                              },
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                12,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "t29wB",
+                                  "name": "r2Num",
+                                  "fill": "#FDFAF5",
+                                  "content": "2",
+                                  "fontFamily": "Georgia",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "kNpJz",
+                                  "name": "r2Label",
+                                  "fill": "#8c9097",
+                                  "content": "Lower-Med",
+                                  "textAlign": "center",
+                                  "fontFamily": "Roboto",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "2IHcZ",
+                              "name": "Risk 3",
+                              "width": "fill_container",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1,
+                                "fill": "#325a7d"
+                              },
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                12,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "hNXFX",
+                                  "name": "r3Num",
+                                  "fill": "#FDFAF5",
+                                  "content": "3",
+                                  "fontFamily": "Georgia",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "dQzSo",
+                                  "name": "r3Label",
+                                  "fill": "#8c9097",
+                                  "content": "Medium",
+                                  "textAlign": "center",
+                                  "fontFamily": "Roboto",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "BJPVH",
+                              "name": "Risk 4",
+                              "width": "fill_container",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1,
+                                "fill": "#325a7d"
+                              },
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                12,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "8lp5d",
+                                  "name": "r4Num",
+                                  "fill": "#FDFAF5",
+                                  "content": "4",
+                                  "fontFamily": "Georgia",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "jmHiq",
+                                  "name": "r4Label",
+                                  "fill": "#8c9097",
+                                  "content": "Med-Higher",
+                                  "textAlign": "center",
+                                  "fontFamily": "Roboto",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "1M9qV",
+                              "name": "Risk 5",
+                              "width": "fill_container",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1,
+                                "fill": "#325a7d"
+                              },
+                              "layout": "vertical",
+                              "gap": 4,
+                              "padding": [
+                                12,
+                                8
+                              ],
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "gTGre",
+                                  "name": "r5Num",
+                                  "fill": "#FDFAF5",
+                                  "content": "5",
+                                  "fontFamily": "Georgia",
+                                  "fontSize": 18,
+                                  "fontWeight": "700"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "MozBy",
+                                  "name": "r5Label",
+                                  "fill": "#8c9097",
+                                  "content": "Higher",
+                                  "textAlign": "center",
+                                  "fontFamily": "Roboto",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "QHo4f",
+                          "name": "Selected Description",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "VMSQp",
+                              "name": "selectedLabel",
+                              "fill": "#FDFAF5",
+                              "content": "Lower",
+                              "fontFamily": "Georgia",
+                              "fontSize": 16,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "e8ZWt",
+                              "name": "selectedDesc",
+                              "fill": "#FDFAF5",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "You're likely to be more conservative with your investments and understand that there may be some short-term changes in value to get potentially modest or relatively stable returns.",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "xP3K1",
+                  "name": "Divider3",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#325a7d"
+                },
+                {
+                  "type": "frame",
+                  "id": "tBu5y",
+                  "name": "Assess Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rbWmL",
+                      "name": "assessHeading",
+                      "fill": "#FDFAF5",
+                      "content": "How to assess your attitude to risk",
+                      "fontFamily": "Georgia",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "G83nb",
+                      "name": "assessIntro",
+                      "fill": "#FDFAF5",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "This EV questionnaire can help you understand your attitude to risk but there are some limitations:",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "DcwGi",
+                      "name": "Bullet Points",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "cpo7H",
+                          "name": "Bullet 1",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "VbvMD",
+                              "name": "dot1",
+                              "fill": "#f0645a",
+                              "content": "•",
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "aeQww",
+                              "name": "bp1Text",
+                              "fill": "#FDFAF5",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "The questionnaire is designed to help you decide for yourself and shouldn't be taken as advice",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "gdJNt",
+                          "name": "Bullet 2",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "mZH9V",
+                              "name": "dot2",
+                              "fill": "#f0645a",
+                              "content": "•",
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "HD3Vc",
+                              "name": "bp2Text",
+                              "fill": "#FDFAF5",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "The questionnaire doesn't consider your age, your financial goals or how much money you'd be comfortable losing i.e. your capacity for loss",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "0YCGB",
+                          "name": "Bullet 3",
+                          "width": "fill_container",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "DRGma",
+                              "name": "dot3",
+                              "fill": "#f0645a",
+                              "content": "•",
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Iul4I",
+                              "name": "bp3Text",
+                              "fill": "#FDFAF5",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "You should also consider how long you plan to invest for and when you think you might need access to your money",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cWdbf",
+                  "name": "Divider4",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#325a7d"
+                },
+                {
+                  "type": "frame",
+                  "id": "Yo1BH",
+                  "name": "CTA Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Jt47x",
+                      "name": "ctaHeading",
+                      "fill": "#FDFAF5",
+                      "content": "Take the questionnaire",
+                      "textAlign": "center",
+                      "fontFamily": "Georgia",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "FnRRS",
+                      "name": "ctaDesc",
+                      "fill": "#FDFAF5",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "The EV attitude to risk questionnaire contains 13 multiple choice questions which you need to answer to discover your risk rating. It should take less than 5 minutes.",
+                      "lineHeight": 1.6,
+                      "textAlign": "center",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QaHFk",
+                      "name": "CTA Button",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "#f0645a",
+                      "cornerRadius": 9999,
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "8IH5W",
+                          "name": "ctaText",
+                          "fill": "#FFFFFF",
+                          "content": "I'm ready to start",
+                          "fontFamily": "Roboto",
+                          "fontSize": 16,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "0bFLJ",
+                          "name": "ctaIcon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FFFFFF"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YZQ6t",
+          "name": "Footer",
+          "width": "fill_container",
+          "layout": "vertical",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "jiS8P",
+              "name": "Footer Content",
+              "width": "fill_container",
+              "height": 56,
+              "fill": "#0f1a28",
+              "padding": [
+                0,
+                40
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "qs3xr",
+                  "name": "footerLogo",
+                  "fill": "#8c9097",
+                  "content": "saltus",
+                  "fontFamily": "Georgia",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "LdBDY",
+                  "name": "footerLinks",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SllLg",
+                      "name": "footerLink1",
+                      "fill": "#8c9097",
+                      "content": "Privacy Policy",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "VB3Pb",
+                      "name": "footerLink2",
+                      "fill": "#8c9097",
+                      "content": "Terms of Service",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "UYtZ7",
+      "x": 1540,
+      "y": 1000,
+      "name": "Question - Dark",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "#0f1a28",
+      "layout": "vertical",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Abx4J",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 64,
+          "stroke": {
+            "align": "inside",
+            "thickness": 0
+          },
+          "padding": [
+            0,
+            40
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "FXi5e",
+              "name": "Logo",
+              "fill": "#f0645a",
+              "content": "saltus",
+              "fontFamily": "Georgia",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "EZejy",
+              "name": "Header Right",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "oluSp",
+                  "name": "qHeaderRight",
+                  "fill": "$--muted-foreground",
+                  "content": "Question 5 of 13",
+                  "fontFamily": "Roboto",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "cx8g3",
+                  "name": "Theme Toggle",
+                  "fill": "$--muted",
+                  "cornerRadius": 9999,
+                  "gap": 2,
+                  "padding": 3,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "YGbrk",
+                      "name": "Sun Btn",
+                      "width": 26,
+                      "height": 26,
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "WYJyR",
+                          "name": "sunIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "sun",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--muted-foreground"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KGrsb",
+                      "name": "Moon Btn",
+                      "width": 26,
+                      "height": 26,
+                      "fill": "$--card",
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "uWzeN",
+                          "name": "moonIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "moon",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--foreground"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "BfvLt",
+          "name": "Content Area",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            32,
+            20
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "FHUXH",
+              "name": "Question Card",
+              "width": 580,
+              "fill": "#18263a",
+              "cornerRadius": 12,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000014",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              },
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 36,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ItEsL",
+                  "name": "Progress Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "gkUjP",
+                      "name": "progressLabel",
+                      "fill": "#8c9097",
+                      "content": "Question 5 of 13",
+                      "fontFamily": "Roboto",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "2nz0B",
+                      "name": "Progress Bar",
+                      "width": "fill_container",
+                      "height": 6,
+                      "cornerRadius": 3,
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "wdBNn",
+                          "name": "seg1",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#49796b",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "rxmwc",
+                          "name": "seg2",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#49796b",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "husKn",
+                          "name": "seg3",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#49796b",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "nIlnW",
+                          "name": "seg4",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#49796b",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "l5Ub1",
+                          "name": "seg5",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#f0645a",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "zzM7s",
+                          "name": "seg6",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#22384f",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hpVov",
+                          "name": "seg7",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#22384f",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "UgJO9",
+                          "name": "seg8",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#22384f",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xDpbO",
+                          "name": "seg9",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#22384f",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "evStL",
+                          "name": "seg10",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#22384f",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "t7Qci",
+                          "name": "seg11",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#22384f",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "SDcxq",
+                          "name": "seg12",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#22384f",
+                          "cornerRadius": 3
+                        },
+                        {
+                          "type": "frame",
+                          "id": "l6GyY",
+                          "name": "seg13",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "fill": "#22384f",
+                          "cornerRadius": 3
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "NXzAj",
+                  "name": "Question",
+                  "fill": "#FDFAF5",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "If the value of your investments fell by 20%, what would you do?",
+                  "lineHeight": 1.4,
+                  "fontFamily": "Georgia",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "Hjjqw",
+                  "name": "Answer Options",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "0yddk",
+                      "name": "Answer 1",
+                      "width": "fill_container",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#325a7d"
+                      },
+                      "gap": 12,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "69A0d",
+                          "name": "radio1",
+                          "fill": "#0f1a28",
+                          "width": 20,
+                          "height": 20,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2,
+                            "fill": "#325a7d"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "ubORC",
+                          "name": "ansText1",
+                          "fill": "#FDFAF5",
+                          "content": "Sell all my investments immediately",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vpuAM",
+                      "name": "Answer 2 Selected",
+                      "width": "fill_container",
+                      "fill": "#2a1a1a",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#f0645a"
+                      },
+                      "gap": 12,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "mFIjf",
+                          "name": "Radio Selected",
+                          "width": 20,
+                          "height": 20,
+                          "fill": "#0f1a28",
+                          "cornerRadius": 10,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2,
+                            "fill": "#f0645a"
+                          },
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "3vfvk",
+                              "x": 5,
+                              "y": 5,
+                              "name": "radio2Dot",
+                              "fill": "#f0645a",
+                              "width": 10,
+                              "height": 10
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "n2gZO",
+                          "name": "ansText2",
+                          "fill": "#FDFAF5",
+                          "content": "Be concerned, but wait to see if they recover",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "blLXk",
+                      "name": "Answer 3",
+                      "width": "fill_container",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#325a7d"
+                      },
+                      "gap": 12,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "26PZy",
+                          "name": "radio3",
+                          "fill": "#0f1a28",
+                          "width": 20,
+                          "height": 20,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2,
+                            "fill": "#325a7d"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "QiJ8L",
+                          "name": "ansText3",
+                          "fill": "#FDFAF5",
+                          "content": "Do nothing, this is normal market behaviour",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Awtki",
+                      "name": "Answer 4",
+                      "width": "fill_container",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#325a7d"
+                      },
+                      "gap": 12,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "xhA9y",
+                          "name": "radio4",
+                          "fill": "#0f1a28",
+                          "width": 20,
+                          "height": 20,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2,
+                            "fill": "#325a7d"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "P4v2F",
+                          "name": "ansText4",
+                          "fill": "#FDFAF5",
+                          "content": "Invest more to take advantage of lower prices",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "B1c1b",
+                  "name": "Next Button",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#f0645a",
+                  "cornerRadius": 9999,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Zi5aP",
+                      "name": "nextText",
+                      "fill": "#FFFFFF",
+                      "content": "Next",
+                      "fontFamily": "Roboto",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "g6VL7",
+                      "name": "nextIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "arrow-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "anm5P",
+          "name": "Footer",
+          "width": "fill_container",
+          "layout": "vertical",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "k66aZ",
+              "name": "Footer Content",
+              "width": "fill_container",
+              "height": 56,
+              "fill": "#0f1a28",
+              "padding": [
+                0,
+                40
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "UBMM6",
+                  "name": "qFooterLogo",
+                  "fill": "#8c9097",
+                  "content": "saltus",
+                  "fontFamily": "Georgia",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "v8jA0",
+                  "name": "qFooterLinks",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "7f062",
+                      "name": "qFLink1",
+                      "fill": "#8c9097",
+                      "content": "Privacy Policy",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "M6VC3",
+                      "name": "qFLink2",
+                      "fill": "#8c9097",
+                      "content": "Terms of Service",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "cEKUY",
+      "x": 3080,
+      "y": 1000,
+      "name": "Results - Dark",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "#0f1a28",
+      "layout": "vertical",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "a3Ioa",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 64,
+          "stroke": {
+            "align": "inside",
+            "thickness": 0
+          },
+          "padding": [
+            0,
+            40
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "9wzYU",
+              "name": "Logo",
+              "fill": "#f0645a",
+              "content": "saltus",
+              "fontFamily": "Georgia",
+              "fontSize": 28,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "wQvrK",
+              "name": "Header Right",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "3J3JY",
+                  "name": "rHeaderRight",
+                  "fill": "$--muted-foreground",
+                  "content": "Your Results",
+                  "fontFamily": "Roboto",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "wFcTt",
+                  "name": "Theme Toggle",
+                  "fill": "$--muted",
+                  "cornerRadius": 9999,
+                  "gap": 2,
+                  "padding": 3,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "PcsqE",
+                      "name": "Sun Btn",
+                      "width": 26,
+                      "height": 26,
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "vUXZk",
+                          "name": "sunIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "sun",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--muted-foreground"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zVq8X",
+                      "name": "Moon Btn",
+                      "width": 26,
+                      "height": 26,
+                      "fill": "$--card",
+                      "cornerRadius": 9999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "rKeBH",
+                          "name": "moonIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "moon",
+                          "iconFontFamily": "lucide",
+                          "fill": "$--foreground"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "bgDdX",
+          "name": "Content Area",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            32,
+            20
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "hygTd",
+              "name": "Results Card",
+              "width": 520,
+              "fill": "#18263a",
+              "cornerRadius": 12,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000014",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3
+              },
+              "layout": "vertical",
+              "gap": 28,
+              "padding": [
+                40,
+                36
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CR91m",
+                  "name": "Rating Circle",
+                  "width": 120,
+                  "height": 120,
+                  "fill": "#22384f",
+                  "cornerRadius": 60,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 3,
+                    "fill": "#f0645a"
+                  },
+                  "layout": "vertical",
+                  "gap": 2,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Ew1kW",
+                      "name": "ratingNum",
+                      "fill": "#FDFAF5",
+                      "content": "3",
+                      "textAlign": "center",
+                      "fontFamily": "Georgia",
+                      "fontSize": 40,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UVDMU",
+                      "name": "ratingOf",
+                      "fill": "#8c9097",
+                      "content": "of 5",
+                      "textAlign": "center",
+                      "fontFamily": "Roboto",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "nTEM7",
+                  "name": "resultTitle",
+                  "fill": "#FDFAF5",
+                  "content": "Medium Risk",
+                  "textAlign": "center",
+                  "fontFamily": "Georgia",
+                  "fontSize": 24,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "2HAmz",
+                  "name": "resultDesc",
+                  "fill": "#8c9097",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "You have a balanced approach to risk. You understand that some level of risk is necessary for growth but prefer not to take extreme positions. A diversified portfolio with a mix of growth and defensive assets would suit your profile.",
+                  "lineHeight": 1.6,
+                  "textAlign": "center",
+                  "fontFamily": "Roboto",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "h7kXK",
+                  "name": "Risk Scale",
+                  "width": "fill_container",
+                  "height": 8,
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "NbKrd",
+                      "name": "scaleBar1",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#49796b",
+                      "cornerRadius": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "OPe3r",
+                      "name": "scaleBar2",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#49796b",
+                      "cornerRadius": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EhW48",
+                      "name": "scaleBar3",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#f0645a",
+                      "cornerRadius": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Ob0IX",
+                      "name": "scaleBar4",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#22384f",
+                      "cornerRadius": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MIhcP",
+                      "name": "scaleBar5",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#22384f",
+                      "cornerRadius": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "p02Lx",
+                  "name": "Scale Labels",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "cQ9pQ",
+                      "name": "scaleLabelLow",
+                      "fill": "#8c9097",
+                      "content": "Lower Risk",
+                      "fontFamily": "Roboto",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "aZ633",
+                      "name": "scaleLabelHigh",
+                      "fill": "#8c9097",
+                      "content": "Higher Risk",
+                      "fontFamily": "Roboto",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "SY8fU",
+                  "name": "Action Buttons",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "IUONb",
+                      "name": "Retake Button",
+                      "width": "fill_container",
+                      "height": 48,
+                      "cornerRadius": 9999,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#325a7d"
+                      },
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "YDu5s",
+                          "name": "retakeIcon",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "rotate-ccw",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FDFAF5"
+                        },
+                        {
+                          "type": "text",
+                          "id": "x6qFn",
+                          "name": "retakeText",
+                          "fill": "#FDFAF5",
+                          "content": "Retake",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "UniJ3",
+                      "name": "Download Button",
+                      "width": "fill_container",
+                      "height": 48,
+                      "fill": "#f0645a",
+                      "cornerRadius": 9999,
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "kTTz3",
+                          "name": "dlIcon",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "download",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FFFFFF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "kBCBf",
+                          "name": "dlText",
+                          "fill": "#FFFFFF",
+                          "content": "Download PDF",
+                          "fontFamily": "Roboto",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cytoe",
+          "name": "Footer",
+          "width": "fill_container",
+          "layout": "vertical",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Yr0Nh",
+              "name": "Footer Content",
+              "width": "fill_container",
+              "height": 56,
+              "fill": "#0f1a28",
+              "padding": [
+                0,
+                40
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "UP9Ev",
+                  "name": "rFooterLogo",
+                  "fill": "#8c9097",
+                  "content": "saltus",
+                  "fontFamily": "Georgia",
+                  "fontSize": 20,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "sNvV4",
+                  "name": "rFooterLinks",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "kSWfc",
+                      "name": "rFLink1",
+                      "fill": "#8c9097",
+                      "content": "Privacy Policy",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "l5ukP",
+                      "name": "rFLink2",
+                      "fill": "#8c9097",
+                      "content": "Terms of Service",
+                      "fontFamily": "Roboto",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "themes": {
+    "Mode": [
+      "Dark"
+    ]
+  },
+  "variables": {
+    "--accent": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#f0645a"
+        },
+        {
+          "value": "#f0645a",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--accent-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF"
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--background": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FDFAF5"
+        },
+        {
+          "value": "#0f1a28",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--blue": {
+      "type": "color",
+      "value": "#325a7d"
+    },
+    "--border": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#dddddd"
+        },
+        {
+          "value": "#325a7d",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--card": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF"
+        },
+        {
+          "value": "#18263a",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--card-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#18263a"
+        },
+        {
+          "value": "#FDFAF5",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--coral": {
+      "type": "color",
+      "value": "#f0645a"
+    },
+    "--cream": {
+      "type": "color",
+      "value": "#fff5e6"
+    },
+    "--font-body": {
+      "type": "string",
+      "value": "Roboto"
+    },
+    "--font-heading": {
+      "type": "string",
+      "value": "Georgia"
+    },
+    "--foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#18263a"
+        },
+        {
+          "value": "#FDFAF5",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--gold": {
+      "type": "color",
+      "value": "#ec9f22"
+    },
+    "--green": {
+      "type": "color",
+      "value": "#49796b"
+    },
+    "--logo": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#f0645a"
+        },
+        {
+          "value": "#f0645a",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--muted": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#f0ece5"
+        },
+        {
+          "value": "#22384f",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--muted-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#8c9097"
+        },
+        {
+          "value": "#8c9097",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--navy": {
+      "type": "color",
+      "value": "#18263a"
+    },
+    "--primary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#f0645a"
+        },
+        {
+          "value": "#f0645a",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--primary-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF"
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--progress-complete": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#49796b"
+        },
+        {
+          "value": "#49796b",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--progress-current": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#f0645a"
+        },
+        {
+          "value": "#f0645a",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--progress-pending": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#eeeeee"
+        },
+        {
+          "value": "#22384f",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--radio-hover": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#fef2f1"
+        },
+        {
+          "value": "#2a1a1a",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--radio-selected": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#f0645a"
+        },
+        {
+          "value": "#f0645a",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--teal": {
+      "type": "color",
+      "value": "#9de6e4"
+    }
+  }
+}

@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #18263a;
-  --color-dark-navy: #22384f;
-  --color-blue: #325a7d;
-  --color-cream: #fff5e6;
+  /* Static brand colors */
   --color-coral: #f0645a;
   --color-gold: #ec9f22;
-  --color-teal: #9de6e4;
   --color-green: #49796b;
-  --color-grey: #8c9097;
-  --color-light-grey: #eeeeee;
-  --color-divider: #dddddd;
 
+  /* Typography */
   --font-heading: Georgia, serif;
   --font-body: "Roboto", sans-serif;
 
+  /* Radii & shadows */
   --radius-card: 12px;
   --radius-input: 8px;
   --radius-pill: 9999px;
-
   --shadow-card: 0 1px 2.625px #00000014;
+}
+
+@theme inline {
+  /* Semantic theme colors — resolved at runtime via CSS custom properties */
+  --color-surface: var(--t-surface);
+  --color-foreground: var(--t-foreground);
+  --color-panel: var(--t-panel);
+  --color-muted: var(--t-muted);
+  --color-muted-fg: var(--t-muted-fg);
+  --color-border-clr: var(--t-border);
+  --color-link: var(--t-link);
+  --color-toggle-bg: var(--t-toggle-bg);
+}
+
+:root {
+  --t-surface: #FDFAF5;
+  --t-foreground: #18263a;
+  --t-panel: #FFFFFF;
+  --t-muted: #f0ece5;
+  --t-muted-fg: #8c9097;
+  --t-border: #dddddd;
+  --t-link: #325a7d;
+  --t-toggle-bg: #f0ece5;
+}
+
+[data-theme="dark"] {
+  --t-surface: #0f1a28;
+  --t-foreground: #FDFAF5;
+  --t-panel: #18263a;
+  --t-muted: #22384f;
+  --t-muted-fg: #8c9097;
+  --t-border: #325a7d;
+  --t-link: #9de6e4;
+  --t-toggle-bg: #22384f;
 }
 
 body {

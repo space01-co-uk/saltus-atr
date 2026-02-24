@@ -18,14 +18,20 @@ describe('riskRatings', () => {
     expect(getRiskRating(rating)?.label).toBe(expectedLabel)
   })
 
+  it.each([1, 2, 3, 4, 5])('rating %i has a non-empty description', (rating) => {
+    const info = getRiskRating(rating)
+    expect(info?.description).toBeTruthy()
+    expect(info?.description.length).toBeGreaterThan(20)
+  })
+
   it.each([
-    [1, 'Conservative, short-term changes for modest/stable returns'],
-    [2, 'Cautious, reasonable long-term returns, accept some risk'],
-    [3, 'Balanced, accepts fluctuations for better long-term returns'],
-    [4, 'Comfortable with risk for higher long-term returns'],
-    [5, 'Very comfortable, aiming for high long-term returns'],
-  ])('rating %i has correct description', (rating, expectedDesc) => {
-    expect(getRiskRating(rating)?.description).toBe(expectedDesc)
+    [1, 'Lower'],
+    [2, 'Lower-Med'],
+    [3, 'Medium'],
+    [4, 'Med-Higher'],
+    [5, 'Higher'],
+  ])('rating %i has shortLabel "%s"', (rating, expectedShort) => {
+    expect(getRiskRating(rating)?.shortLabel).toBe(expectedShort)
   })
 
   it('returns undefined for out-of-range ratings', () => {

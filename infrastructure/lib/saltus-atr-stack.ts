@@ -1,6 +1,7 @@
 import * as cdk from "aws-cdk-lib";
-import * as amplify from "aws-cdk-lib/aws-amplify";
 import * as appsync from "aws-cdk-lib/aws-appsync";
+import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
+import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 import * as cognito from "aws-cdk-lib/aws-cognito";
 import * as iam from "aws-cdk-lib/aws-iam";
 import * as lambda from "aws-cdk-lib/aws-lambda-nodejs";
@@ -13,29 +14,13 @@ export class SaltusAtrStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // Deploy with: cdk deploy -c basicAuthPassword=yourpassword
     const allowedOrigin = this.node.tryGetContext("allowedOrigin") as
       | string
       | undefined;
-    const basicAuthUsername =
-      (this.node.tryGetContext("basicAuthUsername") as string) ?? "guestuser";
-    const basicAuthPassword = this.node.tryGetContext("basicAuthPassword") as
-      | string
-      | undefined;
-    if (!basicAuthPassword) {
-      throw new Error(
-        'CDK context "basicAuthPassword" is required. Deploy with: cdk deploy -c basicAuthPassword=yourpassword',
-      );
-    }
 
-    const githubToken = this.node.tryGetContext("githubToken") as
-      | string
-      | undefined;
-    if (!githubToken) {
-      throw new Error(
-        'CDK context "githubToken" is required. Deploy with: cdk deploy -c githubToken=ghp_xxx',
-      );
-    }
+    // Basic auth credentials for demo access (base64-encoded in CloudFront Function)
+    const basicAuthUsername = "guestuser";
+    const basicAuthPassword = "s3a5e01";
 
     // Cognito Identity Pool (unauthenticated access for anonymous users)
     const identityPool = new cognito.CfnIdentityPool(
@@ -142,46 +127,76 @@ export class SaltusAtrStack extends cdk.Stack {
       fieldName: "calculateRisk",
     });
 
-    // Amplify Hosting — password-protected frontend with GitHub auto-deploy
-    const amplifyApp = new amplify.CfnApp(this, "SaltusATRAmplifyApp", {
-      name: "saltus-atr-questionnaire",
-      repository: "https://github.com/space01-vinnymann/saltus-atr",
-      oauthToken: githubToken,
-      platform: "WEB",
-      environmentVariables: [
-        { name: "VITE_APPSYNC_ENDPOINT", value: api.graphqlUrl },
-        { name: "VITE_APPSYNC_REGION", value: this.region },
-        { name: "VITE_COGNITO_IDENTITY_POOL_ID", value: identityPool.ref },
-        { name: "VITE_PARENT_ORIGIN", value: "" },
-        { name: "_CUSTOM_IMAGE", value: "amplify:al2023" },
-      ],
-      basicAuthConfig: {
-        enableBasicAuth: true,
-        username: basicAuthUsername,
-        password: basicAuthPassword,
+    // --- CloudFront + S3 Hosting ---
+
+    // S3 bucket for frontend static files
+    const hostingBucket = new s3.Bucket(this, "HostingBucket", {
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
+    });
+
+    // CloudFront Function for HTTP Basic Auth
+    const encodedCredentials = Buffer.from(
+      `${basicAuthUsername}:${basicAuthPassword}`,
+    ).toString("base64");
+
+    const basicAuthFunction = new cloudfront.Function(
+      this,
+      "BasicAuthFunction",
+      {
+        functionName: "SaltusATRBasicAuth",
+        code: cloudfront.FunctionCode.fromInline(`
+function handler(event) {
+  var request = event.request;
+  var headers = request.headers;
+  var expected = "Basic ${encodedCredentials}";
+  if (!headers.authorization || headers.authorization.value !== expected) {
+    return {
+      statusCode: 401,
+      statusDescription: "Unauthorized",
+      headers: { "www-authenticate": { value: 'Basic realm="Saltus ATR Demo"' } }
+    };
+  }
+  return request;
+}
+`),
+        runtime: cloudfront.FunctionRuntime.JS_2_0,
       },
-      customRules: [
+    );
+
+    // CloudFront distribution
+    const distribution = new cloudfront.Distribution(this, "Distribution", {
+      defaultBehavior: {
+        origin: origins.S3BucketOrigin.withOriginAccessControl(hostingBucket),
+        viewerProtocolPolicy:
+          cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        functionAssociations: [
+          {
+            function: basicAuthFunction,
+            eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+          },
+        ],
+      },
+      defaultRootObject: "index.html",
+      // SPA routing: serve index.html for all non-file paths
+      errorResponses: [
         {
-          source:
-            "</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json|webp)$)([^.]+$)/>",
-          target: "/index.html",
-          status: "200",
+          httpStatus: 403,
+          responseHttpStatus: 200,
+          responsePagePath: "/index.html",
+        },
+        {
+          httpStatus: 404,
+          responseHttpStatus: 200,
+          responsePagePath: "/index.html",
         },
       ],
     });
 
-    new amplify.CfnBranch(this, "SaltusATRMainBranch", {
-      appId: amplifyApp.attrAppId,
-      branchName: "main",
-      enableAutoBuild: true,
-      stage: "PRODUCTION",
-      framework: "React",
-    });
-
-    // Amplify URL for S3 CORS — resolves at deploy time via CloudFormation
-    const amplifyUrl = cdk.Fn.join("", [
-      "https://main.",
-      amplifyApp.attrDefaultDomain,
+    const cloudfrontUrl = cdk.Fn.join("", [
+      "https://",
+      distribution.distributionDomainName,
     ]);
 
     // S3 bucket for PDF storage
@@ -194,7 +209,10 @@ export class SaltusAtrStack extends cdk.Stack {
       cors: [
         {
           allowedMethods: [s3.HttpMethods.GET],
-          allowedOrigins: [allowedOrigin ?? amplifyUrl, "http://localhost:*"],
+          allowedOrigins: [
+            allowedOrigin ?? cloudfrontUrl,
+            "http://localhost:*",
+          ],
           allowedHeaders: ["*"],
           maxAge: 3600,
         },
@@ -235,15 +253,57 @@ export class SaltusAtrStack extends cdk.Stack {
       fieldName: "generateRiskResultPDF",
     });
 
-    // Outputs
-    new cdk.CfnOutput(this, "AmplifyAppUrl", {
-      value: amplifyUrl,
-      description: "Amplify Hosting URL (password-protected)",
+    // --- GitHub Actions OIDC Deploy Role ---
+
+    const githubProvider = new iam.OpenIdConnectProvider(this, "GitHubOIDC", {
+      url: "https://token.actions.githubusercontent.com",
+      clientIds: ["sts.amazonaws.com"],
     });
 
-    new cdk.CfnOutput(this, "AmplifyAppId", {
-      value: amplifyApp.attrAppId,
-      description: "Amplify App ID",
+    const deployRole = new iam.Role(this, "GitHubDeployRole", {
+      assumedBy: new iam.WebIdentityPrincipal(
+        githubProvider.openIdConnectProviderArn,
+        {
+          StringEquals: {
+            "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          },
+          StringLike: {
+            "token.actions.githubusercontent.com:sub":
+              "repo:space01-vinnymann/saltus-atr:ref:refs/heads/main",
+          },
+        },
+      ),
+    });
+
+    hostingBucket.grantReadWrite(deployRole);
+    deployRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: ["cloudfront:CreateInvalidation"],
+        resources: [
+          `arn:aws:cloudfront::${this.account}:distribution/${distribution.distributionId}`,
+        ],
+      }),
+    );
+
+    // Outputs
+    new cdk.CfnOutput(this, "CloudFrontUrl", {
+      value: cloudfrontUrl,
+      description: "CloudFront URL (password-protected)",
+    });
+
+    new cdk.CfnOutput(this, "DistributionId", {
+      value: distribution.distributionId,
+      description: "CloudFront Distribution ID",
+    });
+
+    new cdk.CfnOutput(this, "HostingBucketName", {
+      value: hostingBucket.bucketName,
+      description: "S3 bucket for frontend hosting",
+    });
+
+    new cdk.CfnOutput(this, "DeployRoleArn", {
+      value: deployRole.roleArn,
+      description: "IAM role for GitHub Actions deploy",
     });
 
     new cdk.CfnOutput(this, "AppSyncEndpoint", {
