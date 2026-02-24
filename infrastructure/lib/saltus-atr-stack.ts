@@ -25,9 +25,9 @@ export class SaltusAtrStack extends cdk.Stack {
     // Cognito Identity Pool (unauthenticated access for anonymous users)
     const identityPool = new cognito.CfnIdentityPool(
       this,
-      "SaltusATRIdentityPool",
+      "SaltusATRQuestionnaireIdentityPool",
       {
-        identityPoolName: "SaltusATRIdentityPool",
+        identityPoolName: "SaltusATRQuestionnaireIdentityPool",
         allowUnauthenticatedIdentities: true,
       },
     );
@@ -57,8 +57,8 @@ export class SaltusAtrStack extends cdk.Stack {
     });
 
     // AppSync GraphQL API
-    const api = new appsync.GraphqlApi(this, "SaltusATRApi", {
-      name: "SaltusATRApi",
+    const api = new appsync.GraphqlApi(this, "SaltusATRQuestionnaireApi", {
+      name: "SaltusATRQuestionnaireApi",
       definition: appsync.Definition.fromFile(
         path.join(__dirname, "schema.graphql"),
       ),
@@ -77,7 +77,7 @@ export class SaltusAtrStack extends cdk.Stack {
       this,
       "GetQuestionsFunction",
       {
-        functionName: "getQuestionsSaltusATR",
+        functionName: "saltusATRQuestionnaire-getQuestions",
         entry: path.join(__dirname, "..", "lambda", "getQuestions", "index.ts"),
         handler: "handler",
         runtime: lambdaBase.Runtime.NODEJS_22_X,
@@ -92,7 +92,7 @@ export class SaltusAtrStack extends cdk.Stack {
       this,
       "CalculateRiskFunction",
       {
-        functionName: "calculateRiskSaltusATR",
+        functionName: "saltusATRQuestionnaire-calculateRisk",
         entry: path.join(
           __dirname,
           "..",
@@ -145,7 +145,7 @@ export class SaltusAtrStack extends cdk.Stack {
       this,
       "BasicAuthFunction",
       {
-        functionName: "SaltusATRBasicAuth",
+        functionName: "SaltusATRQuestionnaireBasicAuth",
         code: cloudfront.FunctionCode.fromInline(`
 function handler(event) {
   var request = event.request;
@@ -201,7 +201,7 @@ function handler(event) {
 
     // S3 bucket for PDF storage
     const pdfBucket = new s3.Bucket(this, "SaltusATRPDFStore", {
-      bucketName: `saltus-atr-pdf-store-${this.account}`,
+      bucketName: `saltus-atr-questionnaire-pdf-${this.account}`,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
@@ -225,7 +225,7 @@ function handler(event) {
       this,
       "GeneratePdfFunction",
       {
-        functionName: "generateRiskResultPDFSaltusATR",
+        functionName: "saltusATRQuestionnaire-generatePDF",
         entry: path.join(__dirname, "..", "lambda", "generatePDF", "index.ts"),
         handler: "handler",
         runtime: lambdaBase.Runtime.NODEJS_22_X,

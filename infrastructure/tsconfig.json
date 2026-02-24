@@ -23,5 +23,5 @@
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
-  "include": ["bin/**/*", "lib/**/*", "lambda/**/*"]
+  "include": ["bin/**/*", "lib/**/*", "lambda/**/*", "scripts/**/*"]
 }

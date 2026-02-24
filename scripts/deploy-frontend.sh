@@ -1,7 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-STACK_NAME="SaltusAtrStack"
+export AWS_PROFILE="jr-dev"
+STACK_NAME="SaltusAtrQuestionnaireStack"
 REGION="eu-west-2"
 
 get_output() {

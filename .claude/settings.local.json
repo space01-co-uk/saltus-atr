@@ -49,7 +49,11 @@
       "WebFetch(domain:www.saltus.co.uk)",
       "Bash(yarn test -- --watchAll=false)",
       "WebFetch(domain:customer-handover.risk.standardlife.co.uk)",
-      "mcp__playwright__browser_close"
+      "mcp__playwright__browser_close",
+      "Bash(npx ts-node scripts/preview-pdf-template.ts)",
+      "Bash(npm test)",
+      "Bash(git stash)",
+      "Bash(git stash pop)"
     ]
   }
 }

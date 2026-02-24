@@ -11,9 +11,9 @@ React SPA for a 13-question attitude-to-risk questionnaire (EValue "5risk" syste
 - **Frontend:** React 18.2, TypeScript 5.x, Create React App 5.0.1
 - **Package manager:** Yarn 4.x (Berry)
 - **Backend:** AWS AppSync (GraphQL, IAM auth), Lambda (Node.js 22.x, TypeScript)
-- **Infrastructure:** AWS CDK (WAF, Cognito, PDF services) + Amplify CLI (AppSync, hosting)
-- **Hosting:** S3 + CloudFront via Amplify
-- **CI/CD:** Bitbucket Pipelines
+- **Infrastructure:** AWS CDK (Cognito, AppSync, Lambda, S3, CloudFront, PDF services)
+- **Hosting:** S3 + CloudFront (CDK-managed)
+- **CI/CD:** Manual deploy via CLI
 
 ## Common Commands
 
@@ -22,6 +22,20 @@ yarn start          # Dev server
 yarn build          # Production build
 yarn test           # Run tests (Jest)
 yarn test -- --watchAll=false  # Run tests once (CI mode)
+```
+
+## Deployment
+
+- **AWS Profile:** `jr-dev`
+- **Region:** `eu-west-2`
+- **CDK Stack:** `SaltusAtrQuestionnaireStack`
+
+```bash
+# Deploy infrastructure (from infrastructure/ directory)
+AWS_PROFILE=jr-dev npx cdk deploy SaltusAtrQuestionnaireStack
+
+# Deploy frontend only (builds + syncs to S3 + invalidates CloudFront)
+AWS_PROFILE=jr-dev bash scripts/deploy-frontend.sh
 ```
 
 ## Architecture

@@ -5,8 +5,8 @@
   "scripts": {
     "build": "tsc",
     "synth": "cdk synth",
-    "deploy": "cdk deploy",
-    "test": "vitest run"
+    "deploy": "AWS_PROFILE=jr-dev cdk deploy SaltusAtrQuestionnaireStack",
+    "test": "vitest run --exclude 'dist/**'"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.995.0",

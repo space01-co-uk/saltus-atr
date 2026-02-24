@@ -5,7 +5,7 @@ import { SaltusAtrStack } from '../lib/saltus-atr-stack'
 
 const app = new cdk.App()
 
-new SaltusAtrStack(app, 'SaltusAtrStack', {
+new SaltusAtrStack(app, 'SaltusAtrQuestionnaireStack', {
   env: {
     account: process.env.CDK_DEFAULT_ACCOUNT,
     region: process.env.CDK_DEFAULT_REGION ?? 'eu-west-2',
