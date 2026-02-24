@@ -67,13 +67,13 @@ After completing each parent task:
 
 ---
 
-- [ ] 2.0 Modify `getQuestions` Lambda to call EValue API
-  - [ ] 2.1 Read the current `infrastructure/lambda/getQuestions/index.ts` to understand the existing handler signature and return shape
-  - [ ] 2.2 Rewrite `infrastructure/lambda/getQuestions/index.ts` to: read `access_token` from `event.prev.result.access_token` (forwarded by pipeline resolver); read `EVALUE_API_BASE_URL` from env var; `POST` to `{EVALUE_API_BASE_URL}/riskQuestionnaire/1.0.0/riskProfiler/getQuestionnaireData` with Bearer token and body `{ "questionnaireName": "5risk" }`; transform the EValue response (`questionId`->`id` as string, `questionText`->`text`, `responses[].responseId`->`answers[].id` as string, `responses[].responseText`->`answers[].text`); return the transformed array
-  - [ ] 2.3 Add error handling: throw `"Missing EValue access token"` if `access_token` is missing; throw `"Failed to fetch questions from EValue"` on non-2xx, logging status and body
-  - [ ] 2.4 Delete `infrastructure/lambda/getQuestions/data.ts`
-  - [ ] 2.5 Create `infrastructure/lambda/getQuestions/index.test.ts` with Vitest tests covering: successful fetch and field mapping transformation (mock `global.fetch`); missing `access_token` in event; EValue API non-2xx response; verify returned shape matches GraphQL `Question` type (`id: string, text: string, answers: [{ id: string, text: string }]`)
-  - [ ] 2.6 Run `cd infrastructure && yarn test` to confirm all tests pass
+- [x] 2.0 Modify `getQuestions` Lambda to call EValue API
+  - [x] 2.1 Read the current `infrastructure/lambda/getQuestions/index.ts` to understand the existing handler signature and return shape
+  - [x] 2.2 Rewrite `infrastructure/lambda/getQuestions/index.ts` to: read `access_token` from `event.prev.result.access_token` (forwarded by pipeline resolver); read `EVALUE_API_BASE_URL` from env var; `POST` to `{EVALUE_API_BASE_URL}/riskQuestionnaire/1.0.0/riskProfiler/getQuestionnaireData` with Bearer token and body `{ "questionnaireName": "5risk" }`; transform the EValue response (`questionId`->`id` as string, `questionText`->`text`, `responses[].responseId`->`answers[].id` as string, `responses[].responseText`->`answers[].text`); return the transformed array
+  - [x] 2.3 Add error handling: throw `"Missing EValue access token"` if `access_token` is missing; throw `"Failed to fetch questions from EValue"` on non-2xx, logging status and body
+  - [x] 2.4 Delete `infrastructure/lambda/getQuestions/data.ts`
+  - [x] 2.5 Create `infrastructure/lambda/getQuestions/index.test.ts` with Vitest tests covering: successful fetch and field mapping transformation (mock `global.fetch`); missing `access_token` in event; EValue API non-2xx response; verify returned shape matches GraphQL `Question` type (`id: string, text: string, answers: [{ id: string, text: string }]`)
+  - [x] 2.6 Run `cd infrastructure && yarn test` to confirm all tests pass
 
 > **CHECKPOINT: Stop here.** Verify (build/lint/test), summarise what was implemented, list assumptions + failure modes + production risks, and **wait for explicit user approval** before continuing.
 
