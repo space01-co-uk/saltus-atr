@@ -91,13 +91,13 @@ After completing each parent task:
 
 ---
 
-- [ ] 4.0 Update GraphQL schema and `generatePDF` Lambda to accept questions from frontend
-  - [ ] 4.1 Update `infrastructure/lib/schema.graphql`: add `RiskQuestionInput` input type (`questionId: Int!, questionText: String!, responses: [RiskResponseInput]!`), add `RiskResponseInput` input type (`responseId: Int!, responseText: String!`), add `RiskQuestions: [RiskQuestionInput]!` field to `RiskResultPDFInput`
-  - [ ] 4.2 Read `infrastructure/lambda/generatePDF/index.ts` and `infrastructure/lambda/generatePDF/template.ts` to understand how questions are currently used
-  - [ ] 4.3 Modify `infrastructure/lambda/generatePDF/index.ts` to: read questions from `event.arguments.input.RiskQuestions` instead of importing from `data.ts`; add validation that `RiskQuestions` is a non-empty array (throw if missing); map the input questions to the shape expected by `compileTemplate` (the same shape as the old `data.ts` export: `{ id: number, text: string, answers: [{ id: number, text: string }] }`)
-  - [ ] 4.4 Delete `infrastructure/lambda/generatePDF/data.ts`
-  - [ ] 4.5 Update `infrastructure/lambda/generatePDF/template.test.ts` if needed — check if tests import from `data.ts` or `__fixtures__/mockAnswers.ts` and update imports accordingly
-  - [ ] 4.6 Run `cd infrastructure && yarn test` to confirm all tests pass
+- [x] 4.0 Update GraphQL schema and `generatePDF` Lambda to accept questions from frontend
+  - [x] 4.1 Update `infrastructure/lib/schema.graphql`: add `RiskQuestionInput` input type (`questionId: Int!, questionText: String!, responses: [RiskResponseInput]!`), add `RiskResponseInput` input type (`responseId: Int!, responseText: String!`), add `RiskQuestions: [RiskQuestionInput]!` field to `RiskResultPDFInput`
+  - [x] 4.2 Read `infrastructure/lambda/generatePDF/index.ts` and `infrastructure/lambda/generatePDF/template.ts` to understand how questions are currently used
+  - [x] 4.3 Modify `infrastructure/lambda/generatePDF/index.ts` to: read questions from `event.arguments.input.RiskQuestions` instead of importing from `data.ts`; add validation that `RiskQuestions` is a non-empty array (throw if missing); map the input questions to the shape expected by `compileTemplate` (the same shape as the old `data.ts` export: `{ id: number, text: string, answers: [{ id: number, text: string }] }`)
+  - [x] 4.4 Delete `infrastructure/lambda/generatePDF/data.ts`
+  - [x] 4.5 Update `infrastructure/lambda/generatePDF/template.test.ts` if needed — check if tests import from `data.ts` or `__fixtures__/mockAnswers.ts` and update imports accordingly
+  - [x] 4.6 Run `cd infrastructure && yarn test` to confirm all tests pass
 
 > **CHECKPOINT: Stop here.** Verify (build/lint/test), summarise what was implemented, list assumptions + failure modes + production risks, and **wait for explicit user approval** before continuing.
 
