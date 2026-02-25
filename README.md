@@ -36,29 +36,29 @@ Set `VITE_USE_MOCK_DATA=true` in a `.env.local` file to use mock data without a 
 
 ## Routes
 
-| Route | Purpose |
-|---|---|
-| `/` | Landing page with risk level info and CTA |
-| `/questionnaire` | 13 questions with progress bar |
-| `/results` | Risk rating display and PDF download |
-| `/error` | Technical error with back button |
+| Route            | Purpose                                   |
+| ---------------- | ----------------------------------------- |
+| `/`              | Landing page with risk level info and CTA |
+| `/questionnaire` | 13 questions with progress bar            |
+| `/results`       | Risk rating display and PDF download      |
+| `/error`         | Technical error with back button          |
 
 ## Environment Variables
 
-| Variable | Description |
-|---|---|
-| `VITE_APPSYNC_ENDPOINT` | AppSync GraphQL endpoint URL |
-| `VITE_APPSYNC_REGION` | AWS region (defaults to `eu-west-2`) |
-| `VITE_COGNITO_IDENTITY_POOL_ID` | Cognito Identity Pool ID for anonymous auth |
-| `VITE_PARENT_ORIGIN` | Allowed parent origin for iframe `postMessage` |
-| `VITE_USE_MOCK_DATA` | Set to `true` to use mock data instead of the real API |
+| Variable                        | Description                                            |
+| ------------------------------- | ------------------------------------------------------ |
+| `VITE_APPSYNC_ENDPOINT`         | AppSync GraphQL endpoint URL                           |
+| `VITE_APPSYNC_REGION`           | AWS region (defaults to `eu-west-2`)                   |
+| `VITE_COGNITO_IDENTITY_POOL_ID` | Cognito Identity Pool ID for anonymous auth            |
+| `VITE_PARENT_ORIGIN`            | Allowed parent origin for iframe `postMessage`         |
+| `VITE_USE_MOCK_DATA`            | Set to `true` to use mock data instead of the real API |
 
 ## Deployment
 
 ```bash
 # Deploy infrastructure (from infrastructure/ directory)
-AWS_PROFILE=jr-dev npx cdk deploy SaltusAtrQuestionnaireStack
+AWS_PROFILE=saltusspace npx cdk deploy SaltusAtrQuestionnaireStack
 
 # Deploy frontend only (builds + syncs to S3 + invalidates CloudFront)
-AWS_PROFILE=jr-dev bash scripts/deploy-frontend.sh
+AWS_PROFILE=saltusspace bash scripts/deploy-frontend.sh
 ```
