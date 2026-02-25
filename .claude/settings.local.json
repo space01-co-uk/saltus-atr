@@ -53,7 +53,14 @@
       "Bash(npx ts-node scripts/preview-pdf-template.ts)",
       "Bash(npm test)",
       "Bash(git stash)",
-      "Bash(git stash pop)"
+      "Bash(git stash pop)",
+      "Bash(git -C /Users/vinny/Documents/Repos/saltus/atr-questionnaire remote -v)",
+      "Bash(yarn tsc --noEmit)",
+      "Bash(yarn test -- --watchAll=false --coverage)",
+      "Bash(yarn test -- --watchAll=false infrastructure/lambda/getQuestions/index.test.ts)",
+      "Bash(yarn husky init)",
+      "Bash(bash .husky/pre-commit)",
+      "Bash(echo \"Exit: $?\")"
     ]
   }
 }

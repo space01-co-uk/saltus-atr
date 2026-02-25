@@ -44,7 +44,7 @@ describe('getQuestions', () => {
   it('fetches questions from EValue and transforms the response', async () => {
     mockFetch.mockResolvedValue({
       ok: true,
-      json: () => Promise.resolve(evalueResponse),
+      json: () => Promise.resolve({ questions: evalueResponse }),
     })
 
     const result = await handler(makeEvent('test-token') as never)
@@ -85,13 +85,15 @@ describe('getQuestions', () => {
     mockFetch.mockResolvedValue({
       ok: true,
       json: () =>
-        Promise.resolve([
-          {
-            questionId: 42,
-            questionText: 'Test',
-            responses: [{ responseId: 99, responseText: 'Answer' }],
-          },
-        ]),
+        Promise.resolve({
+          questions: [
+            {
+              questionId: 42,
+              questionText: 'Test',
+              responses: [{ responseId: 99, responseText: 'Answer' }],
+            },
+          ],
+        }),
     })
 
     const result = await handler(makeEvent('token') as never)

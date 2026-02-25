@@ -14,3 +14,7 @@ coverage/
 
 .playwright-mcp/
 .vite/
+
+.husky/_
+.husky/pre-commit
+.yarn/install-state.gz
